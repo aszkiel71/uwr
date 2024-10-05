@@ -1,6 +1,6 @@
 x = int(input("Podaj pierwsza liczbe : "))
 y = int(input("Podaj druga liczbe : "))
-wynik = 0
+result = 0
 
 if x > y:
     bigger = x
@@ -9,4 +9,11 @@ else:
     bigger = y
     smaller = x
 
+tmp = smaller
 
+while smaller <= bigger:
+    if smaller == bigger:
+        result = 1
+    smaller += tmp
+
+print(result)

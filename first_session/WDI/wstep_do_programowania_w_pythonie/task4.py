@@ -18,5 +18,3 @@ for i in range(1, 11):
 print("\nDla n = 10 : ")
 for i in range(1, 11):
     print(f"{i}. -> {losuj_haslo(10)}")
-
-print('niga')

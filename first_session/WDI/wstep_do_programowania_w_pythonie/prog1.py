@@ -9,40 +9,21 @@ def potega(a,n):
    
 def kwadrat(n):
     for i in range(n):
-       for j in range(n):   # pętla w pętli
-           pass
-         # print ("*", end="")
-    #   print()
-      
+        print("* " * n)
+
 def kwadrat2(n):
     for i in range(n):
-      pass
-      # print (n * "#")
-  
-# wcześniej były definicje, poniżej jest część która się wykonuje
+        print (n * "#")
 
-      
-for i in range(10):
-    pass
-    #print (i, 2 ** i, potega(2,i), sqrt(i))  # drukujemy kolejne liczby wraz z kolejnymi potęgami dwójki oraz kolejnymi pierwiastkami
-   
-print ()
 
 for i in range(5):
-    print ("Przebieg:",i)
-    print (20 * "-")
-    print (20 * "-")
-    print (20 * "-")
-    for j in range(i):
-        print(20 * '-')
-        print(20 * '-')
-    if i % 2 == 0:   # parzysta
-        kwadrat(3+2*i)
-    else:  # czyli nieparzysta
-        kwadrat2(3+i)
-    print()    # pusty wiersz   
-         
+    print(f"Przebieg: {i}")
+    print(20 * "-")
+    kwadrat(3 + 2 * i)
+    print()
+
 for i in range(5, 10):
-    print(f"Przebieg {i}")
-    for _ in range(i-2):
-        print("#")
+    print(f"Przebieg: {i}")
+    print(20 * "-")
+    kwadrat2(i - 2)  # rysujemy kwadrat z hashy o rozmiarze i-2
+    print()  # pusty wiersz dla czytelności

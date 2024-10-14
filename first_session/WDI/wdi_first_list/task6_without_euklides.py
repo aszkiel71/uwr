@@ -1,6 +1,14 @@
 x = int(input("Podaj pierwsza wartosc :  "))
 y = int(input("Podaj druga wartosc :  "))
 
+def modulo(a, b):
+    if a > b:
+        q = a//b
+        return a-q*b
+    else:
+        q = b//a
+        return b-q*a
+
 def NWD(x, y):
 
     if x > y:
@@ -12,7 +20,7 @@ def NWD(x, y):
         
     i = 1
     while i <= smaller:
-        if bigger % i == 0 and smaller % i == 0:
+        if modulo(bigger, i) == 0 and modulo(smaller, i) == 0:
             tmp_nwd = i
         i += 1
 

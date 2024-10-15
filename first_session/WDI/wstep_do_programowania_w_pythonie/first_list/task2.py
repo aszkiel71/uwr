@@ -19,6 +19,8 @@ def silnia(n):
 
 def koncowka(n):
     if len(str(silnia(n))) % 10 == 2 or len(str(silnia(n))) % 10 == 3 or len(str(silnia(n))) % 10 == 4:
+        if len(str(silnia(n))) % 100 == 12 or len(str(silnia(n))) % 100 == 13 or len(str(silnia(n))) % 100 == 14:
+            return False
         return True
     return False
 

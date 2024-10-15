@@ -5,9 +5,7 @@ def dlc(digit):
 
     digit = str(digit)
 
-    lines = []
-    for _ in range(5):
-        lines.append("")
+    lines = ['']*5
 
     for i in digit:
         cyfra_wizualizacja = daj_cyfre(int(i))
@@ -20,4 +18,4 @@ def dlc(digit):
 
 
 
-dlc(3919023)
+dlc(1023)

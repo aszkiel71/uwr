@@ -9,7 +9,7 @@ def potega(a,n):
    
 def kwadrat(n):
     for i in range(n):
-        print("* " * n)
+        print("*" * n)
 
 def kwadrat2(n):
     for i in range(n):
@@ -17,7 +17,7 @@ def kwadrat2(n):
 
 
 for i in range(5):
-    print(f"Przebieg: {i}")
+    print(f"Przebieg:{i}")
     print(20 * "-")
     kwadrat(3 + 2 * i)
     print()

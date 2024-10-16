@@ -1,15 +1,15 @@
 def kolko(n):
 
     for i in range(3, n + 1, 2):
-        spacje = (n - i) // 2
-        print(" " * spacje + "#" * i)
+        spaces = (n - i) // 2
+        print(" " * spaces + "#" * i)
 
     for _ in range(3):
         print("#" * n)
 
     for i in range(n - 2, 2, -2):
-        spacje = (n - i) // 2
-        print(" " * spacje + "#" * i)
+        spaces = (n - i) // 2
+        print(" " * spaces + "#" * i)
 
 
 def balwanek(kulki):

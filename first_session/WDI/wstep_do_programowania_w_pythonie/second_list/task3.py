@@ -1,15 +1,12 @@
 def kolko(n):
-    """Tworzy kółko o szerokości n."""
-    # Górna część (rosnąco)
+
     for i in range(3, n + 1, 2):
         spacje = (n - i) // 2
         print(" " * spacje + "#" * i)
 
-    # Środkowa część - 3 wiersze o szerokości n
     for _ in range(3):
         print("#" * n)
 
-    # Dolna część (malejąco - odbicie górnej)
     for i in range(n - 2, 2, -2):
         spacje = (n - i) // 2
         print(" " * spacje + "#" * i)

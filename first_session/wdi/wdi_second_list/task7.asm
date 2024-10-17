@@ -8,7 +8,7 @@ loop:
   load x[i]
   write x[i]
   load i
-  sub i
+  sub 1
   store i
   jump loop
 

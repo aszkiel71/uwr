@@ -1,0 +1,4 @@
+zadania z tej listy na githubie sa wykonane w dosyc uproszczony sposob tzn.
+zamiast ladowac akumulator to dla przejrzystosci wskazujemy zamiast indeksu
+symbol. tak samo pojawia sie funkcja JLTZ, która nalezy zmienic na JGTZ (i
+zamienic miejscami argumenty, ktore chcemy poddać relacji if).

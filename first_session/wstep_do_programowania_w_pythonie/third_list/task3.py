@@ -6,4 +6,4 @@ def usun_w_nawiasach(s):
         if switcher:    new_s += i
         if i == ")":    switcher = 1
     return new_s
-print(usun_w_nawiasach("Ala(a) ma kota (b)(c)(d)assa(e)"))
+print(usun_w_nawiasach("A(sdd121)la(a) ma kota (b)(c)(d)(e)"))

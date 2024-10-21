@@ -1,22 +1,8 @@
-def kolko(n):
-
-    for i in range(3, n + 1, 2):
-        spaces = (n - i) // 2
-        print(" " * spaces + "#" * i)
-
-    for _ in range(3):
-        print("#" * n)
-
-    for i in range(n - 2, 2, -2):
-        spaces = (n - i) // 2
-        print(" " * spaces + "#" * i)
-
-
 def balwanek(kulki):
 
     max_n = max(kulki)  # -> the longest radius used for centering
 
-    for n in kulki:
+    for n in kulki[::-1]:
         spaces = (max_n - n) // 2  # -> how many spaces needed for centering
 
         for i in range(3, n + 1, 2):
@@ -29,4 +15,4 @@ def balwanek(kulki):
             print(" " * (spaces + (n - i) // 2) + "#" * i)
 
 
-balwanek([11, 11, 11])
+balwanek([11, 11, 9])

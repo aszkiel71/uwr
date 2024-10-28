@@ -15,4 +15,4 @@ def balwanek(kulki):
             print(" " * (spaces + (n - i) // 2) + "#" * i)
 
 
-balwanek([11, 11, 9])
+balwanek([19, 15, 7])

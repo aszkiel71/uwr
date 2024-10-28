@@ -1,27 +1,27 @@
-read a, b, c
-load a
-add b
-sub c
-jgtz check 2
+#a, b, c -> 1, 2, 3 miejsce w akumualtorze
+load 1
+add 2
+sub 3
+jgtz check2
 jump nie
 check2:
-    load a
-    add c
-    sub b
+    load 1
+    add 3
+    sub 2
     jgtz check3
     jump nie
 
 check3:
-    load b
-    add c
-    sub a
+    load 2
+    add 3
+    sub 1
     jgtz tak
     jump nie
 
 tak:
-    write "TAK"
+    write ="TAK"
     halt
 
 nie:
-    write: "NIE"
+    write ="NIE"
     halt

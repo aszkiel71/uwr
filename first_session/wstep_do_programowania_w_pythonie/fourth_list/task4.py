@@ -3,7 +3,7 @@ def is_palindrom(n):
         return True
     return False
 
-def sito_erastotelesa(n):
+def sito_eratostenesa(n):
     numbers = [0] * (n + 1)
     numbers[0], numbers[1] = 1, 1
 
@@ -22,10 +22,10 @@ def palindromy(a, b):
     else:
         b += 1
 
-    tab = sito_erastotelesa(max(a, b))
+    tab = sito_eratostenesa (max(a, b))
     result = []
     for i in range(min(a, b), max(a, b), 1):
         if tab[i] == 0 and is_palindrom(i):
             result.append(i)
     return result
-print(palindromy(2, 929))
+print(palindromy(10**8, 2))

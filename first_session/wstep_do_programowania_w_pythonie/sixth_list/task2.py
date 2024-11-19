@@ -12,6 +12,5 @@ for word in words:
     if reversed_word in words and word < reversed_word:
         reverse_pairs.append((word, reversed_word))
 
-# Print the results
 for pair in reverse_pairs:
     print(pair)

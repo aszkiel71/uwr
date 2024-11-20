@@ -20,4 +20,3 @@ def sito(n):
             ind += 1
     return S
 
-print(sito(6))

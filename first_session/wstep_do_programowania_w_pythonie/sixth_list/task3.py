@@ -1,9 +1,8 @@
 from first_session.wstep_do_programowania_w_pythonie.third_list.task1 import is_prime
+from first_session.wdi.wdi_sixth_list.task5 import sito
 
-def primary_factorial(number):
-    factorization = []
-    for i in range(1, number//2):
-        if number % i == 0 and is_prime(i):     factorization.append(i)
-    return set(factorization)
+def primary_factorial(n):
+    sito_n = sito(n)
+    while n != 1:
+        if
 
-print(primary_factorial(121))

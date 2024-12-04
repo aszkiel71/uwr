@@ -1,18 +1,19 @@
-def balwanek(kulki):
-
-    max_n = max(kulki)  # -> the longest radius used for centering
-
-    for n in kulki[::-1]:
-        spaces = (max_n - n) // 2  # -> how many spaces needed for centering
-
-        for i in range(3, n + 1, 2):
-            print(" " * (spaces + (n - i) // 2) + "#" * i)
-
-        for _ in range(3):
-            print(" " * spaces + "#" * n)
-
-        for i in range(n - 2, 2, -2):
-            print(" " * (spaces + (n - i) // 2) + "#" * i)
+def ball(n, p):
+    r = n // 2
+    for i in range(n):
+        print(int(p) * " ", end="")
+        for j in range(n):
+            if (i - r) ** 2 + (j - r) ** 2 <= r ** 2 + r:
+                print("*", end="")
+            else:
+                print(" ", end="")
+        print()
 
 
-balwanek([19, 15, 7])
+def snowman(n1, n2, n3):
+    ball(n1, (n3 - n2) / 2 + (n2 - n1) / 2)
+    ball(n2, (n3 - n2) / 2)
+    ball(n3, 0)
+
+
+snowman(7, 9, 15)

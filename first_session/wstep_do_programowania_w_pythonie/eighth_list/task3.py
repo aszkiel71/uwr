@@ -1,45 +1,39 @@
-from task2 import czy_ukladanka, rozklad
+from collections import defaultdict, Counter
+
+def load_file(file):
+    words = []
+    with open(file, "r", encoding="utf-8") as f:
+        for line in f:
+            words.append(line.strip().lower())
+    return words
 
 
-words = []
-words_file = open("popularne_slowa2023.txt", "r", encoding="utf-8")
-for line in words_file:
-    words.append(line.strip('\n'))
-
-def minus(s1, s2):
-    res = ""
-    rozklad_s1 = rozklad(s1)
-    rozklad_s2 = rozklad(s2)
-    for i in rozklad_s1:
-        rozklad_s1[i] -= rozklad_s2[i]
-    for i in rozklad_s1:
-        tmp = rozklad_s1[i]
-        res += tmp*i
-    return res
+def check_point(name, word1, word2):
+    combined = word1 + word2
+    return sorted(combined) == sorted(name)
 
 
+def znajdz_zagadke(name, words):
+    name = name.lower().replace(" ", "")
+    word_dict = defaultdict(list)
 
-def zagadka(name):
-    tmp = name
-    puzzle = ""
-    counter = 0
-    iteration = 0
-    while True:
-        if name in (" ", ""):
-            break
-        for i in words:
-            if name in (" ", ""):
-                break
-            print(iteration, name, puzzle)
-            iteration = iteration + 1
-            if czy_ukladanka(name, i):
-                puzzle += i
-                puzzle += " "
-                name = minus(name, i)
-            if iteration == len(words):
-                break
-        return puzzle + name
+    for word in words:
+        key = ''.join(sorted(word))
+        word_dict[key].append(word)
 
+    for word1 in words:
+        remaining_letters = Counter(name) - Counter(word1)
+        remaining_key = ''.join(sorted(remaining_letters.elements()))
+        if remaining_key in word_dict:
+            for word2 in word_dict[remaining_key]:
+                if check_point(name, word1, word2):
+                    return f"{word1.capitalize()} {word2.capitalize()}"
+
+    return "No solution"
+
+
+# Testowanie
 if __name__ == "__main__":
-    print(zagadka("Sławomir Nitras"))
-
+    words = load_file("popularne_slowa2023.txt")
+    name = "Wojtek Aszkiełowicz"
+    print(znajdz_zagadke(name, words))

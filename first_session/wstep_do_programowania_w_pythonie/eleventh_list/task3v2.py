@@ -33,6 +33,8 @@ def dhondt():
         podzial_sil[wyniki[i][0]] = 0
     print(podzial_sil)
 
+
+
     mandaty = 0
     while True:
         if mandaty == 460:

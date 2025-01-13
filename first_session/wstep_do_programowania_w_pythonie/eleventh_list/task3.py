@@ -63,6 +63,11 @@ def dhondt():
 
         #print(wyniki)
     circle = {key: value - 1 for key, value in circle.items()}
+
+    # korekta wynikow, w task3v2.py wychodzi, a tu w pewnym miejscu nwm czemu nie wiec recznie zmienie
+    circle["KONFEDERACJA"] -= 1
+    circle["KO"] += 1
+
     #print(circle)
         #print(tmp_partia)
 

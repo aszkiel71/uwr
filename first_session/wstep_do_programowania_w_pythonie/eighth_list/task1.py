@@ -1,10 +1,10 @@
 import random
-import string  # Do obsługi interpunkcji
+import string
 from collections import defaultdict as dd
 
 pol_ang = dd(lambda: [])
 
-# Wczytywanie słownika polsko-angielskiego
+
 for x in open('pol_ang.txt', encoding='utf-8'):
     x = x.strip()
     L = x.split('=')
@@ -13,7 +13,7 @@ for x in open('pol_ang.txt', encoding='utf-8'):
     pol, ang = L
     pol_ang[pol].append(ang)
 
-# Funkcja do wczytywania częstości słów z brown.txt
+
 def wczytaj_czestosc_brown(plik_brown):
     czestosc = dd(int)  # Defaultowo na 0
     for line in open(plik_brown):
@@ -21,10 +21,10 @@ def wczytaj_czestosc_brown(plik_brown):
             czestosc[word.lower()] += 1
     return czestosc
 
-# Częstości słów z pliku brown.txt
+
 czestosc_brown = wczytaj_czestosc_brown('brown.txt')
 
-# Funkcja tłumacząca z preferencją dla popularnych słów
+
 def tlumacz(polskie):
     wynik = []
     for s in polskie:
@@ -42,7 +42,6 @@ def tlumacz(polskie):
             wynik.append(s)
     return ' '.join(wynik)
 
-# Przykładowe zdanie do tłumaczenia
-zdanie = 'Man kochać sport i mleko, innit, eratostenes, sito, siev, Polska.'.split()
+zdanie = 'być czy nie to być, kochać piłka ręka'.split()
 
 print(tlumacz(zdanie))

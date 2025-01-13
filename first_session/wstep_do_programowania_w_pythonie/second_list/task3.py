@@ -9,11 +9,5 @@ def ball(n, p):
                 print(" ", end="")
         print()
 
-
-def snowman(n1, n2, n3):
-    ball(n1, (n3 - n2) / 2 + (n2 - n1) / 2)
-    ball(n2, (n3 - n2) / 2)
-    ball(n3, 0)
-
-
-snowman(7, 9, 15)
+def ball2(n, p):    print("\n".join("".join((int(p) * " " + ("*" if (i - n // 2) ** 2 + (j - n//2) ** 2 <= (n//2) ** 2 + n//2 else " ")) for j in range(n)) for i in range(n)))
+ball2(7, 0)

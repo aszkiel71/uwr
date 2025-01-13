@@ -27,12 +27,11 @@ def znajdz_zagadke(name, words):
         if remaining_key in word_dict:
             for word2 in word_dict[remaining_key]:
                 if check_point(name, word1, word2):
-                    return f"{word1.capitalize()} {word2.capitalize()}"
+                    print(f"{word1.capitalize()} {word2.capitalize()}")
 
     return "No solution"
 
 
-# Testowanie
 if __name__ == "__main__":
     words = load_file("popularne_slowa2023.txt")
     name = "Wojtek Aszkiełowicz"

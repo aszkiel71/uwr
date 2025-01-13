@@ -1,0 +1,1 @@
+import re; print(sum(eval(f"{a}*{b}") for a, b in re.findall(r"mul\((\d+),(\d+)\)", open("wprawka.txt", "r").read())))

@@ -45,7 +45,7 @@ def czy_lamigowka(s):
             num_result = word_to_number(result)
             if num1 + num2 == num_result:
                 if str(num1)[0] == "0" or str(num2)[0] == "0" or str(num_result)[0] == "0":
-                    break
+                    continue
                 return f"Solution found: {s1} = {num1}, {s2} = {num2}, {result} = {num_result}"
         except ValueError:
             continue  # jak cos sie wywali przy zamianie na liczbe

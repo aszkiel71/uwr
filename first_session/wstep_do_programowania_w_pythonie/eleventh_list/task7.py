@@ -2,8 +2,8 @@ import pygame
 import random
 import time
 
-size_x = 1000
-size_y = 1000
+size_x = 600
+size_y = 600
 pygame.init()
 screen = pygame.display.set_mode((size_x, size_y))
 pygame.display.set_caption('BONUSOWE PUNKTY PLS')

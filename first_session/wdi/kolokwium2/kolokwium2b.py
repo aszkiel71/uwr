@@ -1,10 +1,10 @@
 def square_sum(i, j):
+    # T.C. = O(1)
     return i*i + j*j
 
 
 def task4(n):
     results = [0]*n
-    #T.C. = O(sqrt(n) * sqrt(n) + n) = O(2n) = O(n)
     i, j = 1, 1
     for k in range(1, n):
         for l in range(1, n):
@@ -19,6 +19,6 @@ def task4(n):
     for i in range(n):
         if results[i] == 1:
             print(i)
-
+    #T.C. = O(sqrt(n) * sqrt(n) + n) = O(2n) = O(n)
 
 print(task4(9))

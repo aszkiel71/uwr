@@ -59,7 +59,6 @@ class Set:
         return result
 
     def __sub__(self, other):
-        if not isinstance(other, Set): raise NotImplemented
         result = Set()
         for e in tree_to_list(self.tree):
             if e not in other:
@@ -67,17 +66,29 @@ class Set:
         return result
 
     def __gt__(self, other):
-        if not isinstance(other, Set): raise NotImplemented
         if len(tree_to_list(self.tree)) > len(other):
             return True
         return False
 
     def __eq__(self, other):
-        if not isinstance(other, Set): raise NotImplemented
         if len(tree_to_list(self.tree)) == len(other):
             return True
         return False
 
+    def __lt__(self, other):
+        if len(tree_to_list(self.tree)) < len(other):
+            return True
+        return False
+
+    def __le__(self, other):
+        if len(tree_to_list(self.tree)) <= len(other):
+            return True
+        return False
+
+    def __ge__(self, other):
+        if len(tree_to_list(self.tree)) >= len(other):
+            return True
+        return False
 
 
     # !! ----------

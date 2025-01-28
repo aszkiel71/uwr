@@ -1,19 +1,18 @@
 def is_valid_onp(expression):
     stack = []
     operators = {'+', '-', '*', '/'}
-
+    counter = 0
     for char in expression:
         if char.isdigit():
-            stack.append(int(char))
+            counter += 1
         elif char in operators:
-            if len(stack) < 2:
+            if counter < 2:
                 return False #za malo argumentow na stosie
-            stack.pop()
-            stack.pop()
-            stack.append(0)
+            counter-=1
+
         else:
             return False
 
-    return len(stack) == 1
+    return counter == 1
 
 print(is_valid_onp(['5', '6', '+', '7', '*']))

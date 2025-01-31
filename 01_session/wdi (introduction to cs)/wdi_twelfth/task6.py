@@ -1,5 +1,5 @@
 def is_valid_onp(expression):
-    stack = []
+
     operators = {'+', '-', '*', '/'}
     counter = 0
     for char in expression:

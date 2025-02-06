@@ -14,5 +14,5 @@ print(z2(2048, 4))
 
 def z2b(n):
     return z2(n, 1)
-# wyjscie: liczba niekoneicznie roznych dzielnikow pierwszych w rozkladzie na czynniki pierwsze
+# wyjscie: ilosc niekoneicznie roznych dzielnikow pierwszych w rozkladzie na czynniki pierwsze
 

@@ -13,7 +13,9 @@ void quick_sort(int *arr, int left, int right) {
         while (arr[i] < pivot) i++;
         while (arr[j] > pivot) j--;
         if (i <= j) {
-            swap(arr[i], arr[j]);
+            int temp = arr[i];
+            arr[i] = arr[j];
+            arr[j] = temp;
             i++;
             j--;
         }

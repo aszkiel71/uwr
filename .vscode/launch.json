@@ -1,0 +1,13 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        
+        {
+            "name": "Run OCaml",
+            "type": "ocaml.earlybird",
+            "request": "launch",
+            "program": "${workspaceFolder}/test.ml",
+            "stopOnEntry": false
+        }
+    ]
+}

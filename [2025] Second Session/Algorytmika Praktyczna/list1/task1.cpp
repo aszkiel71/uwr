@@ -14,11 +14,6 @@ void ext_euklides(int a ,int b){
   }
 }
 
-int gcd(int a, int b)
-{
-  if (b==0) return a;
-  return gcd(b, a%b);
-}
 
 int main() {
     int t;
@@ -28,7 +23,7 @@ int main() {
       int a, b;
       cin>>a>>b;
       ext_euklides(a, b);
-      cout<<x<<" "<<y<<" "<<gcd(a, b)<<endl;
+      cout<<x<<" "<<y<<" "<<a*x + b*y<<endl;
     }
     return 0;
 }

@@ -1,3 +1,5 @@
+# WOJCIECH ASZKIEŁOWICZ ZADANIE 2        LISTA 1
+# pycharm (nieistotne)
 # imperatywnie
 #
 # pokazujemy jak ma program sie wykonac i jak sie zmieniaja dane

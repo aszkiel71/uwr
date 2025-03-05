@@ -1,3 +1,5 @@
+# WOJCIECH ASZKIEŁOWICZ ZADANIE 1 LISTA 1
+# pycharm (nieistotne)
 # na poczatku imperatywnie
 
 def silnia_imp(n):

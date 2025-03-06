@@ -35,6 +35,7 @@ def coprime_almost_fun(n):
 def coprime_fun_v2(n, k = 2, res = [1]):
     if n == k:                  return set(res)
     if gcd_fun(n, k) == 1:      return coprime_fun_v2(n, k+1, res + [k])
+
     return coprime_fun_v2(n, k+1, res)
 
 

@@ -30,3 +30,16 @@ let rec count_el x xs =
     if x = y then 1 + count_el x ys 
     else count_el x ys;;
 
+
+let rec select xs =
+  match xs with
+  | [] -> failwith "select"
+  | [x] -> (x, [])
+  | x :: ys -> let(min_el, rest) = select ys in if x < min_el then (x, min_el :: rest) else (min_el, x :: rest);;
+
+
+
+let rec select_sort xs =
+  if xs = []
+    then xs
+  else let (min_el, rest) = select xs in min_el :: select_sort rest;;

@@ -1,0 +1,120 @@
+body {
+    background-color: lightblue;
+    color: darkblue;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
+    margin: 0;
+    padding: 0;
+  }
+  
+
+  h1 {
+    font-weight: 1200;
+    text-align: center;
+  }
+  
+
+  p {
+    margin-left: 1rem;
+    margin-right: 1rem;
+    line-height: 1.6;
+  }
+  
+
+  #challenge2 .box {
+    margin: 10px;
+  }
+  
+
+  #challenge2 .box:first-child {
+    background-color: lightgreen;
+    border-radius: 50%;
+    transition: background-color 0.3s;
+  }
+  
+  #challenge2 .box:first-child:hover {
+    background-color: lightpink;
+  }
+  
+
+  #challenge2 .box:nth-child(2) {
+    background-color: lightslategray;
+    width: 100px;
+    height: 100px;
+    border: 10px solid black;
+    transition: background-color 0.3s, border-color 0.3s;
+  }
+  
+  #challenge2 .box:nth-child(2):hover {
+    background-color: black;
+    border-color: lightslategray;
+  }
+  
+
+  #challenge2 .box:nth-child(3) {
+    background: linear-gradient(to bottom, white 50%, red 50%);
+    width: 100px;
+    height: 100px;
+    transition: background-color 0.3s;
+  }
+  
+  #challenge2 .box:nth-child(3):hover {
+    background: linear-gradient(to bottom, red 50%, white 50%);
+  }
+  
+
+  #challenge3 a {
+    color: darkblue;
+    text-decoration: underline;
+    transition: color 0.3s, font-weight 0.3s;
+  }
+  
+  #challenge3 a:visited {
+    color: lightslategray;
+  }
+  
+  #challenge3 a:hover {
+    color: red;
+    font-weight: bold;
+  }
+  
+
+  #challenge3 ul {
+    list-style-type: none;
+  }
+  
+  #challenge3 li {
+    margin: 10px 0;
+  }
+  
+  #challenge3 li::before {
+    content: "🍔";
+    margin-right: 10px;
+  }
+  
+
+  #challenge4 p:empty {
+    display: none;
+  }
+  
+  #challenge4 input:disabled {
+    display: none;
+  }
+  
+  #challenge4 a[href*="recipe"] {
+    display: none;
+  }
+  
+
+  #challenge5 img {
+    width: 70%;
+    min-width: 100px;
+    max-width: 500px;
+    display: inline-block; 
+    margin-left: 0; 
+  }
+  
+
+  #challenge5 figure {
+    text-align: left; 
+  }

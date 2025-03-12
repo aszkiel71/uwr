@@ -6,15 +6,14 @@ body {
   }
   
 
-  h1 {
+  body h1 {
     font-weight: 800;
     text-align: center;
   }
   
 
   p {
-    margin-left: 1rem;
-    margin-right: 1rem;
+    margin: 2rem 1rem;
     line-height: 1.6;
   }
   
@@ -27,7 +26,6 @@ body {
   #challenge2 .box:nth-child(1) {
     background-color: lightgreen;
     border-radius: 50%;
-    transition: background-color 0.3s;
   }
   
   #challenge2 .box:nth-child(1):hover {
@@ -37,10 +35,8 @@ body {
 
   #challenge2 .box:nth-child(2) {
     background-color: lightslategray;
-    width: 100px;
-    height: 100px;
+    box-sizing: border-box;
     border: 10px solid black;
-    transition: background-color 0.3s, border-color 0.3s;
   }
   
   #challenge2 .box:nth-child(2):hover {
@@ -51,9 +47,6 @@ body {
 
   #challenge2 .box:nth-child(3) {
     background: linear-gradient(to bottom, white 50%, red 50%);
-    width: 100px;
-    height: 100px;
-    transition: background-color 0.3s;
   }
   
   #challenge2 .box:nth-child(3):hover {
@@ -64,7 +57,6 @@ body {
   #challenge3 a {
     color: darkblue;
     text-decoration: underline;
-    transition: color 0.3s, font-weight 0.3s;
   }
   
   #challenge3 a:visited {

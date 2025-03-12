@@ -24,13 +24,13 @@ body {
   }
   
 
-  #challenge2 .box:first-child {
+  #challenge2 .box:nth-child(1) {
     background-color: lightgreen;
     border-radius: 50%;
     transition: background-color 0.3s;
   }
   
-  #challenge2 .box:first-child:hover {
+  #challenge2 .box:nth-child(1):hover {
     background-color: lightpink;
   }
   

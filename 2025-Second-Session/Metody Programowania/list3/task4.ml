@@ -1,18 +1,9 @@
-let empty_set x = false;;
+let empty_set = false;;
 
-let empty_set2 = [];;
+let singleton a = fun x -> x==a;;
 
-let singleton a x =
-  if x = a then true
-  else false;;
+let in_set a s = s a;;
 
-let singleton2 a = [a];;
+let union a b = fun x -> a x || b x;;
 
-let rec in_set a s =
-  match s with
-  | [] -> false
-  | y :: ys -> if a = y then true
-  else in_set a ys;;
-
-let in_set2 a s = s a;;
- (*to do later*)
+let intersect a b = fun x -> a x && b x

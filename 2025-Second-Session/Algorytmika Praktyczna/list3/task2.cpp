@@ -28,11 +28,12 @@ int main() {
     const int sqrtN = sqrt_r(N);
     vector<vector<ll>> pre_sum(sqrtN + 1);
 
-    for (int b = 1; b <= sqrtN; ++b) {
+    for (int b = 1; b <= sqrtN; b++) {
         pre_sum[b].resize(N + 1, 0);
-        for (int i = N; i >= 1; --i) {
+        for (int i = N; i >= 1; i--) {
             pre_sum[b][i] = arr[i];
-            if (i + b <= N) pre_sum[b][i] += pre_sum[b][i + b];
+            if (i + b <= N)
+                pre_sum[b][i] += pre_sum[b][i + b];
         }
     }
 

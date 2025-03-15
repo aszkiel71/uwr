@@ -1,6 +1,7 @@
 Things from the University of Wroclaw.
 
 So far completed courses: 
+
 -> Introduction to Computer Science
 
 -> Calculus

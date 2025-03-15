@@ -9,6 +9,7 @@ struct our_pair {
 };
 
 
+
 void switch_values(vector<our_pair> &ARR, int k, int u) {
     int block_size = ARR[0].array.size(); // All blocks have the same size (at least they should XD)
     int block_index = k / block_size;

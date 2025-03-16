@@ -1,9 +1,14 @@
-let empty_set = false;;
 
-let singleton a = fun x -> x==a;;
+type 'a set = 'a -> bool
 
-let in_set a s = s a;;
+let empty_set : 'a set = fun _ -> false
 
-let union a b = fun x -> a x || b x;;
+let singleton (a : 'a) : 'a set = fun x -> x = a
 
-let intersect a b = fun x -> a x && b x
+
+let in_set (a : 'a) (s : 'a set) : bool = s a
+
+
+let union (s : 'a set) (t : 'a set) : 'a set = fun x -> s x || t x
+
+let intersect (s : 'a set) (t : 'a set) : 'a set = fun x -> s x && t x

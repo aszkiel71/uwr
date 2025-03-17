@@ -32,3 +32,6 @@ let tree_span t = let l,r = fold_tree (fun l v r ->
 let flatten t = fold_tree (fun l v r ->
   v::l@r)
   [] t;;
+
+
+  (*l@r łączy listy*)

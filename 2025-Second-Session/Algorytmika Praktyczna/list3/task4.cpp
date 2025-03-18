@@ -35,7 +35,7 @@ int main() {
         cin >> arr[i];
         maxValue = max(maxValue, arr[i]);
     }
-    maxValue = max(maxValue, N);
+    maxValue = min(maxValue, N);
 
     vector<Query> queries(Q);
     vector<int> answers(Q);
@@ -61,12 +61,10 @@ int main() {
             curr_l--;
             int val = arr[curr_l];
 
-            freq[val]++;
-
-            if (freq[val] == val) {
-                goodtho++;
-            } else if (freq[val] == val + 1) {
-                goodtho--;
+            if (val <= maxValue) {
+                if (freq[val] == val) goodtho--;
+                freq[val]++;
+                if (freq[val] == val) goodtho++;
             }
         }
 
@@ -74,41 +72,37 @@ int main() {
             curr_r++;
             int val = arr[curr_r];
 
-            freq[val]++;
-
-            if (freq[val] == val) {
-                goodtho++;
-            } else if (freq[val] == val + 1) {
-                goodtho--;
+            if (val <= maxValue) {
+                if (freq[val] == val) goodtho--;
+                freq[val]++;
+                if (freq[val] == val) goodtho++;
             }
         }
-
 
         while (curr_l < l){
             int val = arr[curr_l];
 
-            if (freq[val] == val) {
-                goodtho--;
-            } else if (freq[val] == val + 1) {
-                goodtho++;
+            if (val <= maxValue) {
+                if (freq[val] == val) goodtho--;
+                freq[val]--;
+                if (freq[val] == val) goodtho++;
             }
 
-            freq[val]--;
             curr_l++;
         }
 
         while (curr_r > r){
             int val = arr[curr_r];
 
-            if (freq[val] == val) {
-                goodtho--;
-            } else if (freq[val] == val + 1) {
-                goodtho++;
+            if (val <= maxValue) {
+                if (freq[val] == val) goodtho--;
+                freq[val]--;
+                if (freq[val] == val) goodtho++;
             }
 
-            freq[val]--;
             curr_r--;
         }
+
 
         answers[idx] = goodtho;
     }

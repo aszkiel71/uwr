@@ -14,7 +14,7 @@ let t =
 
   let rec delete x t =
     let rec delete_min = function
-      | Leaf -> failwith "some error (probably u tried at leaf)"
+      | Leaf -> failwith "some error (probably u tried on a leaf)"
       | Node (Leaf, v, r) -> (v, r)
       | Node (l, v, r) ->
           let (min_val, new_l) = delete_min l in

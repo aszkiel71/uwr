@@ -1,29 +1,24 @@
 #include <iostream>
 #include <vector>
-#include <map>
+#include <algorithm>
+#include <cmath>
 using namespace std;
 
-
-/*
- * Time limit exceeded
- * I should use MO's algorithm then it gonna make it
- */
-
-struct our_pair {
-    vector<int> data;
-    map<int, int> mapa;
+struct Query{
+    int l, r, idx;
 };
 
-int sqrt_r(int n) {
-    int i = 1;
-    while (i * i < n) {
-        i++;
-    }
-    return i;
+int block_size;
+
+bool compare(Query a, Query b){
+    int block_a = a.l / block_size;
+    int block_b = b.l / block_size;
+    if (block_a != block_b)
+        return block_a < block_b;
+    return a.r < b.r;
 }
 
 int main() {
-
     ios_base::sync_with_stdio(false);
     cin.tie(nullptr);
     cout.tie(nullptr);
@@ -31,63 +26,95 @@ int main() {
     int N, Q;
     cin >> N >> Q;
 
-    int block_size = sqrt_r(N);
-
-
-    vector<our_pair> niewiem(block_size + 1);
-
+    block_size = sqrt(N);
 
     vector<int> arr(N);
-    for (int i = 0; i < N; i++) {
+    int maxValue = 0;
+
+    for (int i = 0; i < N; i++){
         cin >> arr[i];
-
-        int block_idx = i / block_size;
-
-        niewiem[block_idx].data.push_back(arr[i]);
-
-        niewiem[block_idx].mapa[arr[i]]++;
+        maxValue = max(maxValue, arr[i]);
     }
+    maxValue = max(maxValue, N);
 
-    while (Q--) {
+    vector<Query> queries(Q);
+    vector<int> answers(Q);
+
+    for (int i = 0; i < Q; i++) {
         int p, k;
         cin >> p >> k;
-        p--; k--;
+        queries[i] = {p - 1, k - 1, i};
+    }
 
-        int start_block = p / block_size;
-        int end_block = k / block_size;
+    sort(queries.begin(), queries.end(), compare);
+    vector<int> freq(maxValue + 1, 0);
 
-        map<int, int> occur;
+    int goodtho = 0;
+    int curr_l = 0, curr_r = -1;
 
-        if (start_block == end_block) {
-            for (int i = p; i <= k; i++) {
-                occur[arr[i]]++;
-            }
-        } else {
-            int block_end = (start_block + 1) * block_size - 1;
-            for (int i = p; i <= min(block_end, k); i++) {
-                occur[arr[i]]++;
-            }
+    for (int i = 0; i < Q; i++){
+        int l = queries[i].l;
+        int r = queries[i].r;
+        int idx = queries[i].idx;
 
-            for (int b = start_block + 1; b < end_block; b++) {
-                for (auto &pair : niewiem[b].mapa) {
-                    occur[pair.first] += pair.second;
-                }
-            }
+        while (curr_l > l){
+            curr_l--;
+            int val = arr[curr_l];
 
-            int block_start = end_block * block_size;
-            for (int i = block_start; i <= k; i++) {
-                occur[arr[i]]++;
+            freq[val]++;
+
+            if (freq[val] == val) {
+                goodtho++;
+            } else if (freq[val] == val + 1) {
+                goodtho--;
             }
         }
 
-        int goodtho = 0;
-        for (auto &pair : occur) {
-            if (pair.first == pair.second) {
+        while (curr_r < r){
+            curr_r++;
+            int val = arr[curr_r];
+
+            freq[val]++;
+
+            if (freq[val] == val) {
+                goodtho++;
+            } else if (freq[val] == val + 1) {
+                goodtho--;
+            }
+        }
+
+
+        while (curr_l < l){
+            int val = arr[curr_l];
+
+            if (freq[val] == val) {
+                goodtho--;
+            } else if (freq[val] == val + 1) {
                 goodtho++;
             }
+
+            freq[val]--;
+            curr_l++;
         }
 
-        cout << goodtho << "\n";
+        while (curr_r > r){
+            int val = arr[curr_r];
+
+            if (freq[val] == val) {
+                goodtho--;
+            } else if (freq[val] == val + 1) {
+                goodtho++;
+            }
+
+            freq[val]--;
+            curr_r--;
+        }
+
+        answers[idx] = goodtho;
+    }
+
+    for (int i = 0; i < Q; i++){
+        cout << answers[i] << "\n";
     }
 
     return 0;

@@ -28,7 +28,11 @@ h3 {
 
 .content__main {
     background-color: #ececf7;
-    padding: 1rem 2rem 2rem;
+    /*padding: 1rem 2rem 2rem;*/
+    padding-top: 1rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+
 }
 
 .main_header {
@@ -37,7 +41,6 @@ h3 {
     padding: 0 2rem;
     display: flex;
     justify-content: space-between;
-    align-items: center;
     position: sticky;
     top: 0;
 }
@@ -47,16 +50,15 @@ h3 {
     margin: 0;
     padding: 0;
     display: flex;
-}
-
-.navigation__item {
     height: 100%;
 }
+
+
 
 .navigation__link {
     display: flex;
     width: 100px;
-    height: 100px;
+    height: 100%;
     justify-content: center;
     align-items: center;
     text-decoration: none;
@@ -143,10 +145,18 @@ h3 {
     height: 200px;
 }
 
+
+.post__content:nth-of-type(1) {
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+
 .post__container:nth-of-type(2) {
     position: absolute;
     left: 250px;
-    top: 0;
+    bottom: 0;
 }
 
 .post__image {
@@ -184,9 +194,5 @@ h3 {
 }
 
 .post__container:hover {
-    z-index: 1;
-}
-
-.post__container:first-child:not(:hover) + .post__container:hover {
     z-index: 1;
 }

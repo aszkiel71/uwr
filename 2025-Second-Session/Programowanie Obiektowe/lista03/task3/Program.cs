@@ -241,7 +241,7 @@ class Program
             new Or(new Zmienna("x"), new Zmienna("z"))
         );
         
-        Console.WriteLine("Przyklad 9: (x ∨ y) ∧ (x ∨ z)");
+        Console.WriteLine("Przyklad : (x ∨ y) ∧ (x ∨ z)");
         Console.WriteLine("Wynik: " + f3.oblicz(vars));
         Console.WriteLine("Po uproszczeniu: ");
         Formula f3Simplified = f3.simplify();

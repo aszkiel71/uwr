@@ -1,0 +1,35 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.2.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2025-Second-Session", "2025-Second-Session", "{C16B586A-4061-077A-8D6B-A541DB8987C3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Programowanie Obiektowe", "Programowanie Obiektowe", "{5069142E-A723-9CDA-8993-16BE9A9661D4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "lista03", "lista03", "{10DFF91C-1409-A8FA-E576-47F81725B7A9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "task3", "2025-Second-Session\Programowanie Obiektowe\lista03\task3\task3.csproj", "{C809650A-632A-5444-5994-09E73124C862}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C809650A-632A-5444-5994-09E73124C862}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C809650A-632A-5444-5994-09E73124C862}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C809650A-632A-5444-5994-09E73124C862}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C809650A-632A-5444-5994-09E73124C862}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{5069142E-A723-9CDA-8993-16BE9A9661D4} = {C16B586A-4061-077A-8D6B-A541DB8987C3}
+		{10DFF91C-1409-A8FA-E576-47F81725B7A9} = {5069142E-A723-9CDA-8993-16BE9A9661D4}
+		{C809650A-632A-5444-5994-09E73124C862} = {10DFF91C-1409-A8FA-E576-47F81725B7A9}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4094EF63-AA61-48D7-940A-889C392A7D82}
+	EndGlobalSection
+EndGlobal

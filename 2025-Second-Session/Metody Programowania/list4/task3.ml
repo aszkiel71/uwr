@@ -21,7 +21,7 @@
         let rec it key value dict acc =
           match dict with
           | [] -> (key, value) :: acc
-          | (k,v)::tail -> if k = key then acc @ [(k,v)] @ tail
+          | (k,v)::tail -> if k = key then acc @ [(k,value)] @ tail
           else it key value tail ((k,v)::acc)
         in it key value dict []
       

@@ -25,6 +25,10 @@
           else it key value tail ((k,v)::acc)
         in it key value dict []
       
+      let insert2 k v d = (k,v)::d
+
+      let remove2 k d = List.filter (fun (k',_) -> Key.compare k k' <> 0) d
+
         let remove key dict =
           let rec it key dict acc = 
             match dict with

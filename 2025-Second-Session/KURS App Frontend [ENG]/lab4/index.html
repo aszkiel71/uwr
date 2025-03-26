@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Contact</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+<form class="contact-form">
+    <h2 class="contact-form__title">Contact Form</h2>
+
+    <div class="contact-form__row">
+        <input type="text" placeholder="First Name" class="contact-form__input" required>
+        <input type="text" placeholder="Last Name" class="contact-form__input" required>
+    </div>
+
+    <input type="email" placeholder="Email" class="contact-form__input" required>
+    <input type="tel" placeholder="Phone" class="contact-form__input">
+
+    <div class="contact-form__checkbox-wrapper">
+        <input type="checkbox" id="newsletter" class="contact-form__checkbox">
+        <label for="newsletter">Subscribe to newsletter</label>
+    </div>
+
+    <select class="contact-form__select" required>
+        <option value="">Reason for Contact</option>
+        <option>Support</option>
+        <option>Sales</option>
+        <option>Feedback</option>
+    </select>
+
+    <textarea class="contact-form__textarea" placeholder="Your message" required></textarea>
+
+    <button type="submit" class="contact-form__submit">Send</button>
+</form>
+</body>
+</html>

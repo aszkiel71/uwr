@@ -1,0 +1,15 @@
+C:\Users\aszki\ocaml\uwr\2025-Second-Session\Programowanie Obiektowe\lista04\task\bin\Debug\net9.0\task.exe
+C:\Users\aszki\ocaml\uwr\2025-Second-Session\Programowanie Obiektowe\lista04\task\bin\Debug\net9.0\task.deps.json
+C:\Users\aszki\ocaml\uwr\2025-Second-Session\Programowanie Obiektowe\lista04\task\bin\Debug\net9.0\task.runtimeconfig.json
+C:\Users\aszki\ocaml\uwr\2025-Second-Session\Programowanie Obiektowe\lista04\task\bin\Debug\net9.0\task.dll
+C:\Users\aszki\ocaml\uwr\2025-Second-Session\Programowanie Obiektowe\lista04\task\bin\Debug\net9.0\task.pdb
+C:\Users\aszki\ocaml\uwr\2025-Second-Session\Programowanie Obiektowe\lista04\task\obj\Debug\net9.0\task.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\aszki\ocaml\uwr\2025-Second-Session\Programowanie Obiektowe\lista04\task\obj\Debug\net9.0\task.AssemblyInfoInputs.cache
+C:\Users\aszki\ocaml\uwr\2025-Second-Session\Programowanie Obiektowe\lista04\task\obj\Debug\net9.0\task.AssemblyInfo.cs
+C:\Users\aszki\ocaml\uwr\2025-Second-Session\Programowanie Obiektowe\lista04\task\obj\Debug\net9.0\task.csproj.CoreCompileInputs.cache
+C:\Users\aszki\ocaml\uwr\2025-Second-Session\Programowanie Obiektowe\lista04\task\obj\Debug\net9.0\task.sourcelink.json
+C:\Users\aszki\ocaml\uwr\2025-Second-Session\Programowanie Obiektowe\lista04\task\obj\Debug\net9.0\task.dll
+C:\Users\aszki\ocaml\uwr\2025-Second-Session\Programowanie Obiektowe\lista04\task\obj\Debug\net9.0\refint\task.dll
+C:\Users\aszki\ocaml\uwr\2025-Second-Session\Programowanie Obiektowe\lista04\task\obj\Debug\net9.0\task.pdb
+C:\Users\aszki\ocaml\uwr\2025-Second-Session\Programowanie Obiektowe\lista04\task\obj\Debug\net9.0\task.genruntimeconfig.cache
+C:\Users\aszki\ocaml\uwr\2025-Second-Session\Programowanie Obiektowe\lista04\task\obj\Debug\net9.0\ref\task.dll

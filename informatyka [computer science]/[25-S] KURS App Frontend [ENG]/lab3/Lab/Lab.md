@@ -1,8 +1,8 @@
 # Zadanie: Stylizacja Nowoczesnego Bloga (10p)
 
-Twoim zadaniem będzie ostylowanie strony bloga zgodnie z poniższymi wytycznymi. Stylizacja powinna zostać zaimplementowana wyłącznie przy użyciu CSS. Możesz edytować kod HTML tylko w wyznaczonych miejscach opisanych przez komentarz. Ostateczny wygląd strony powinien zgadzać się z [obrazkiem](./sol.png) ([pełna rozdzielczość](./sol_fullres.png)).
+Twoim zadaniem będzie ostylowanie strony bloga zgodnie z poniższymi wytycznymi. Stylizacja powinna zostać zaimplementowana wyłącznie przy użyciu CSS. Możesz edytować kod HTML tylko w wyznaczonych miejscach opisanych przez komentarz. Ostateczny wygląd strony powinien zgadzać się z [obrazkiem](sol.png) ([pełna rozdzielczość](sol_fullres.png)).
 
-Pobierz [cały folder](./) w którym znajduje sie ten plik. Swoje rozwiązanie umieścisz w pliku [style.css](./style.css).
+Pobierz [cały folder](./) w którym znajduje sie ten plik. Swoje rozwiązanie umieścisz w pliku [style.css](style.css).
 
 Postaraj się, by używać klas tam gdzie to możliwe.
 

@@ -1,8 +1,8 @@
 # Task: Styling a Modern Blog (10 points)
 
-Your task is to style a blog page according to the guidelines below. The styling should be implemented using only CSS. You may edit the HTML code only in the places indicated by comments. The final appearance of the page should match the [image](./sol.png) ([full resolution](./sol_fullres.png)).
+Your task is to style a blog page according to the guidelines below. The styling should be implemented using only CSS. You may edit the HTML code only in the places indicated by comments. The final appearance of the page should match the [image](sol.png) ([full resolution](sol_fullres.png)).
 
-Download the [entire folder](./) containing this file. You will place your solution in the [style.css](./style.css) file.
+Download the [entire folder](./) containing this file. You will place your solution in the [style.css](style.css) file.
 
 Try to use classes wherever possible.
 

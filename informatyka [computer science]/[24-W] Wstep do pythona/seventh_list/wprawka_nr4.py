@@ -1,5 +1,5 @@
 slowa = []
-with open("popularne_slowa2023.txt", "r", encoding = 'utf8') as file:
+with open("popularne_slowa2023.txt", "r", encoding ='utf8') as file:
     for line in file:
         slowa.append(line.strip())
 

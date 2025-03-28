@@ -38,7 +38,7 @@ void dfs(int a, int b)
     }
 
     v[a].w = max1 + 1;
-    v[a].max_sr = max(max_diam, max1 + max2 + 1);
+    v[a].max_sr = max(max_diam, max1 + max2);
 }
 
 
@@ -59,7 +59,7 @@ int main() {
 
     dfs(0, -32113);
 
-    cout << v[0].max_sr-1 << "\n";
+    cout << v[0].max_sr << "\n";
 
     return 0;
 }

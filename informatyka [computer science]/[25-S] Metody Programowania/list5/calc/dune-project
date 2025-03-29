@@ -1,0 +1,11 @@
+(lang dune 3.14)
+
+(name calc)
+
+(package
+  (name calc)
+  (allow_empty)
+  (depends ocaml dune))
+
+(using menhir 2.1)
+

@@ -8,6 +8,7 @@ def silnia_imp(n):
         res *= i
     return res
 
+
 # funkcjonalnie
 
 def silnia_fun(n):

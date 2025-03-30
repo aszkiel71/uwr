@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\aszki\\ocaml\\uwr\\2025-Second-Session\\Programowanie Obiektowe\\lista04\\task\\task.csproj",
+      "projectUniqueName": "C:\\Users\\aszki\\ocaml\\uwr\\informatyka [computer science]\\[25-S] Programowanie Obiektowe\\lista04\\task\\task.csproj",
       "projectName": "task",
-      "projectPath": "C:\\Users\\aszki\\ocaml\\uwr\\2025-Second-Session\\Programowanie Obiektowe\\lista04\\task\\task.csproj",
+      "projectPath": "C:\\Users\\aszki\\ocaml\\uwr\\informatyka [computer science]\\[25-S] Programowanie Obiektowe\\lista04\\task\\task.csproj",
       "packagesPath": "C:\\Users\\aszki\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\aszki\\ocaml\\uwr\\2025-Second-Session\\Programowanie Obiektowe\\lista04\\task\\obj\\",
+      "outputPath": "C:\\Users\\aszki\\ocaml\\uwr\\informatyka [computer science]\\[25-S] Programowanie Obiektowe\\lista04\\task\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

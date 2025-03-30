@@ -3,18 +3,21 @@ open Ast
 let parse (s : string) : expr =
     Parser.main Lexer.read (Lexing.from_string s)
 
-let eval_op (op : bop) (v1 : int) (v2 : int) : int =
+let eval_op (op : bop) (v1 : float) (v2 : float) : float =
     match op with
-    | Add -> v1 + v2
-    | Sub -> v1 - v2
-    | Mult -> v1 * v2
-    | Div -> v1 / v2
+    | Add -> v1 +. v2
+    | Sub -> v1 -. v2
+    | Mult -> v1 *. v2
+    | Div -> v1 /. v2
+    | Pow -> v1 ** v2 (*task6*)
+    
 
-let rec eval (e : expr) : int =
+let rec eval (e : expr) : float =
     match e with
-    | Int i -> i
+    | Float f -> f
     | Binop (op, e1, e2) -> eval_op op (eval e1) (eval e2)
+    | Log e -> log (eval e) (*task6*)
+    | Const _ -> exp 1.0 (*task6*)
 
-let interp (s : string) : int =
+let interp (s : string) : float =
     eval (parse s)
-

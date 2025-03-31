@@ -6,6 +6,8 @@ let expr : unit grammar = [() , [[ N () ; T "+"; N () ]; [ N () ; T "*"; N () ];
 
 let pol : string grammar = [
  "zdanie", [[ N "grupa-podmiotu"; N "grupa-orzeczenia"]];
+ 
+ "jelogike", [[ N "przydawka"; N "przydawka"; N "orzeczenie"; T "Siema"]];
 
  "grupa-podmiotu", [[ N "przydawka"; N "podmiot"]];
  "grupa-orzeczenia", [[ N "orzeczenie"; N "dopelnienie"]];

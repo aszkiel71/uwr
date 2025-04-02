@@ -2,6 +2,7 @@
 
 using namespace std;
 
+// //tc O(Q*n) (could be better with Segment Tree -> watch out task2.cpp)
 int kadane(int arr[], int N){
   int res = arr[0];    int max_cur = res;
   for(int i = 1; i < N; i++){

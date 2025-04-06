@@ -114,6 +114,7 @@ int main() {
     build_pref(ST_pref, 0, 0, N - 1, pref);
 
 
+
     ll ST_changes[4*N] = {0};
 
     while (Q--) {

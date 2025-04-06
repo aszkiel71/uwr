@@ -8,6 +8,32 @@ ll max(ll a1, ll a2) {
     return (a1 > a2) ? a1 : a2;
 }
 
+ll query(ll ST[], int node, int l, int r, int x, int y) {
+    if (x <= l && r <= y)
+        return ST[node];
+    if (y < l || x > r)
+        return 0;
+
+    int mid = (l + r) / 2;
+    return query(ST, 2*node + 1, l, mid, x, y) +
+           query(ST, 2*node + 2, mid + 1, r, x, y);
+}
+
+void update(ll ST[], int node, int l, int r, int pos, ll delta) {
+
+    if (pos < l || pos > r)
+        return;
+
+    ST[node] += delta;
+
+    if (l != r) {
+        int mid = (l + r) / 2;
+        update(ST, 2*node + 1, l, mid, pos, delta);
+        update(ST, 2*node + 2, mid + 1, r, pos, delta);
+    }
+}
+
+
 ll max_st(ll ST[], int node, int start, int end, int l, int r) {
     if (r < start || l > end) return LLONG_MIN;
     if (l <= start && end <= r) return ST[node];
@@ -36,48 +62,25 @@ int main() {
         pref[i] = pref[i - 1] + Arr[i];
     }
 
-    ll ST[4*S + 4];
-    fill(ST, ST + 2 * S, LLONG_MIN);
+    ll ST_pref[4*N + 4] = {INT_MIN};
+    for (int i = S; i < S + N; ++i) {ST_pref[i] = pref[i];}
+    for (int i = S; i >= 0; i--) {ST_pref[i] = max(ST_pref[2*i + 1], ST_pref[2*i + 2]);}
 
-    for (int i = 0; i < N; ++i) {
-        ST[S + i] = pref[i];
-    }
+    ll ST_changes[4*N + 4] = {0};
 
-    for (int i = S - 1; i >= 0; --i) {
-        ST[i] = max(ST[2 * i + 1], ST[2 * i + 2]);
-    }
-
-    while (Q--) {
+    while (Q--){
         int q; cin >> q;
-        if (q == 1) {
-            int k; ll v; cin >> k >> v; k--;
-            ll delta = v - Arr[k];
-            Arr[k] = v;
-
-
-            for (int i = k; i < N; ++i) {
-                pref[i] += delta;
-                ST[S + i] = pref[i];
-            }
-
-
-            for (int j = S + k; j < S + N; ++j) {
-                int i = j;
-                while (i > 0) {
-                    int parent = (i - 1) / 2;
-                    ll new_val = max(ST[2 * parent + 1], ST[2 * parent + 2]);
-                    if (ST[parent] == new_val) break;
-                    ST[parent] = new_val;
-                    i = parent;
-                }
-            }
+        if (q == 1){
+            int k; cin >> k; ll v; cin >> v; k--;   ll delta = v - Arr[k];
+            update(ST_changes, 0, 0, k, k, delta);
         }
-        else if (q == 2) {
-            int x, y; cin >> x >> y; x--; y--;
-            ll max_prefix = max_st(ST, 0, 0, S - 1, x, y);
-            ll subtract = (x > 0) ? pref[x - 1] : 0;
-            cout << max((max_prefix == LLONG_MIN ? 0 : max_prefix - subtract), 0) << '\n';
+        else if (q == 2){
+            int x, y; cin >> x >> y; x--; y--;  ll delta = query(ST_changes, 0, 0, N-1, x, y);
+            ll val = max_st(ST_pref, 0, 0, N-1, x, y); ll prev_pref = 0;
+            if (x > 0){ll prev_pref = pref[x-1] + ST_changes[S+x-1];}
+            cout << val + delta - prev_pref << "\n";
         }
     }
+
     return 0;
 }

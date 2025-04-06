@@ -15,7 +15,7 @@ ll max(ll a1, ll a2){
 
 int main() {
     ios_base::sync_with_stdio(false);   cin.tie(nullptr);
-    int N, Q;cin >> N >> Q; int S = 1;  while (S < N) S *= 2;S -= 1;    czworka ST[4 * N + 4] = {0, llm/2, llm/2, llm/2};
+    int N, Q;cin >> N >> Q; int S = 1;  while (S < N) S *= 2;S -= 1;    czworka ST[4*N + 4] = {0, llm/2, llm/2, llm/2};
     for (int i = S; i < S + N; i++) {int val;cin>>val;ST[i] = {val, val, val, val};}
     for (int i = S + N; i < 2 * S + 1; i++)     ST[i] = {0, llm/2, llm/2, llm/2};
 

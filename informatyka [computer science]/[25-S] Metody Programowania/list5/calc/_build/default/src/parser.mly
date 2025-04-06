@@ -31,6 +31,6 @@ expr:
     | e1 = expr; DIV; e2 = expr { Binop(Div, e1, e2) }
     | e1 = expr; TIMES; e2 = expr { Binop(Mult, e1, e2) }
     | e1 = expr; POW; e2 = expr { Binop(Pow, e1, e2) } (*task6*)
-    | E { Const (exp 1.0) } (*task6*)
-    | LOG; e = expr { Log e }
+    | E { Float (exp 1.0) } (*task6*)
+    | LOG; e = expr { Log e } (*task6*)
     | LPAREN; e = expr; RPAREN { e }

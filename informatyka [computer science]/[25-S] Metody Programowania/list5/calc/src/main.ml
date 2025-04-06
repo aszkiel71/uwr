@@ -16,8 +16,7 @@ let rec eval (e : expr) : float =
     match e with
     | Float f -> f
     | Binop (op, e1, e2) -> eval_op op (eval e1) (eval e2)
-    | Log e -> log (eval e) (*task6*)
-    | Const _ -> exp 1.0 (*task6*)
+    | Log e -> log (eval e) (*task6*)   
 
 let interp (s : string) : float =
     eval (parse s)

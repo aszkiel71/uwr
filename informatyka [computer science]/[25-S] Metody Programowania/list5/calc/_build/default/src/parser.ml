@@ -147,7 +147,7 @@ let _menhir_action_08 =
   fun () ->
     (
 # 34 "src/parser.mly"
-        ( Const (exp 1.0) )
+        ( Float (exp 1.0) )
 # 152 "src/parser.ml"
      : (Ast.expr))
 

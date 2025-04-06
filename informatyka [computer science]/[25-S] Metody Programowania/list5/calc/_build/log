@@ -1,0 +1,19 @@
+# dune utop
+# OCAMLPARAM: unset
+# Shared cache: enabled-except-user-rules
+# Shared cache location: /home/aszkiel/.cache/dune/db
+# Workspace root: "/mnt/c/Users/aszki/ocaml/uwr/informatyka [computer
+# science]/[25-S] Metody Programowania/list5/calc"
+# Auto-detected concurrency: 12
+# Dune context:
+#  { name = "default"
+#  ; kind = "default"
+#  ; profile = Dev
+#  ; merlin = true
+#  ; fdo_target_exe = None
+#  ; build_dir = In_build_dir "default"
+#  ; instrument_with = []
+#  }
+$ /usr/bin/ocamlc.opt -config > /tmp/dune_e50431_output
+$ (cd _build/default && /usr/bin/ocamlc.opt -w @1..3@5..28@31..39@43@46..47@49..57@61..62@67@69-40 -strict-sequence -strict-formats -short-paths -keep-locs -w -24 -g -bin-annot -I .utop/.utop.eobjs/byte -I /home/aszkiel/.opam/default/lib/bytes -I /home/aszkiel/.opam/default/lib/findlib -I /home/aszkiel/.opam/default/lib/lambda-term -I /home/aszkiel/.opam/default/lib/logs -I /home/aszkiel/.opam/default/lib/logs/lwt -I /home/aszkiel/.opam/default/lib/lwt -I /home/aszkiel/.opam/default/lib/lwt/unix -I /home/aszkiel/.opam/default/lib/lwt_react -I /home/aszkiel/.opam/default/lib/mew -I /home/aszkiel/.opam/default/lib/mew_vi -I /home/aszkiel/.opam/default/lib/ocplib-endian -I /home/aszkiel/.opam/default/lib/ocplib-endian/bigstring -I /home/aszkiel/.opam/default/lib/react -I /home/aszkiel/.opam/default/lib/result -I /home/aszkiel/.opam/default/lib/trie -I /home/aszkiel/.opam/default/lib/uchar -I /home/aszkiel/.opam/default/lib/utop -I /home/aszkiel/.opam/default/lib/uucp -I /home/aszkiel/.opam/default/lib/uuseg -I /home/aszkiel/.opam/default/lib/uutf -I /home/aszkiel/.opam/default/lib/xdg -I /home/aszkiel/.opam/default/lib/zed -I /usr/lib/ocaml/compiler-libs -I /usr/lib/ocaml/threads -I src/.calc.objs/byte -no-alias-deps -o .utop/.utop.eobjs/byte/dune__exe__Utop.cmo -c -impl .utop/utop.ml-gen)
+$ (cd _build/default && /usr/bin/ocamlc.opt -w @1..3@5..28@31..39@43@46..47@49..57@61..62@67@69-40 -strict-sequence -strict-formats -short-paths -keep-locs -w -24 -g -o .utop/utop.bc /usr/lib/ocaml/compiler-libs/ocamlcommon.cma /usr/lib/ocaml/compiler-libs/ocamlbytecomp.cma /usr/lib/ocaml/compiler-libs/ocamltoplevel.cma /home/aszkiel/.opam/default/lib/findlib/findlib.cma /home/aszkiel/.opam/default/lib/findlib/findlib_top.cma /home/aszkiel/.opam/default/lib/logs/logs.cma /home/aszkiel/.opam/default/lib/lwt/lwt.cma /home/aszkiel/.opam/default/lib/logs/lwt/logs_lwt.cma /usr/lib/ocaml/unix.cma /usr/lib/ocaml/bigarray.cma /home/aszkiel/.opam/default/lib/ocplib-endian/ocplib_endian.cma /home/aszkiel/.opam/default/lib/ocplib-endian/bigstring/ocplib_endian_bigstring.cma /usr/lib/ocaml/threads/threads.cma /home/aszkiel/.opam/default/lib/lwt/unix/lwt_unix.cma -I /home/aszkiel/.opam/default/lib/lwt/../stublibs /home/aszkiel/.opam/default/lib/react/react.cma /home/aszkiel/.opam/default/lib/lwt_react/lwt_react.cma /home/aszkiel/.opam/default/lib/result/result.cma /home/aszkiel/.opam/default/lib/uutf/uutf.cma /home/aszkiel/.opam/default/lib/uucp/uucp.cma /home/aszkiel/.opam/default/lib/uuseg/uuseg.cma /home/aszkiel/.opam/default/lib/zed/zed.cma /home/aszkiel/.opam/default/lib/trie/trie.cma /home/aszkiel/.opam/default/lib/mew/mew.cma /home/aszkiel/.opam/default/lib/mew_vi/mew_vi.cma /home/aszkiel/.opam/default/lib/lambda-term/lambda_term.cma -I /home/aszkiel/.opam/default/lib/lambda-term/../stublibs /home/aszkiel/.opam/default/lib/xdg/xdg.cma -I /home/aszkiel/.opam/default/lib/xdg/../stublibs /home/aszkiel/.opam/default/lib/utop/uTop.cma src/calc.cma .utop/.utop.eobjs/byte/dune__exe__Utop.cmo -linkall -warn-error -31)

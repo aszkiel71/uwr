@@ -28,6 +28,8 @@ void update(ourpair ST[], int S, int pos, ll value) {
     }
 }
 
+
+
 int main() {
     ios_base::sync_with_stdio(false);
     cin.tie(nullptr); cout.tie(nullptr);

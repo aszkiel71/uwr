@@ -33,12 +33,11 @@ int main() {
     bool plansza[n] = {false};
     int counter = 0;
     bool flague = 1;
-    while (!isWin(plansza, n) && flague)
+    while (!isWin(plansza, n))
     {
         for(int i=0;i<n;i++){
             if(isWin(plansza,n))
             {
-                flague = false;
                 break;
             }
             if (!plansza[i]){

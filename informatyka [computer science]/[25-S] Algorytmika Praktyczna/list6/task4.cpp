@@ -21,24 +21,24 @@ int main() {
 
     for (int i = S - 1; i >= 0; i--) {
         int left = 2 * i + 1;
-        int secleft = 2 * i + 2;
-        ST[i].sum = ST[left].sum + ST[secleft].sum;
-        ST[i].prefix = max(ST[left].prefix, ST[left].sum + ST[secleft].prefix);
-        ST[i].suffix = max(ST[secleft].suffix, ST[secleft].sum + ST[left].suffix);
-        ST[i].max_sum = max({ST[left].max_sum, ST[secleft].max_sum,
-                            ST[left].suffix + ST[secleft].prefix});
+        int right = 2 * i + 2;
+        ST[i].sum = ST[left].sum + ST[right].sum;
+        ST[i].prefix = max(ST[left].prefix, ST[left].sum + ST[right].prefix);
+        ST[i].suffix = max(ST[right].suffix, ST[right].sum + ST[left].suffix);
+        ST[i].max_sum = max({ST[left].max_sum, ST[right].max_sum,
+                            ST[left].suffix + ST[right].prefix});
     }
 
     while (Q--) {
         int k, x;   cin >> k >> x;  k--;    int pos=k+S;    ST[pos] = {x, x, x, x}; pos = (pos-1)/2;
         while (pos >= 0) {
-            int secright = 2*pos + 1;
+            int left = 2*pos + 1;
             int right = 2*pos + 2;
-            ST[pos].sum = ST[secright].sum + ST[right].sum;
-            ST[pos].prefix = max(ST[secright].prefix, ST[secright].sum + ST[right].prefix);
-            ST[pos].suffix = max(ST[right].suffix, ST[right].sum + ST[secright].suffix);
-            ST[pos].max_sum = max({ST[secright].max_sum, ST[right].max_sum,
-                                 ST[secright].suffix + ST[right].prefix});
+            ST[pos].sum = ST[left].sum + ST[right].sum;
+            ST[pos].prefix = max(ST[left].prefix, ST[left].sum + ST[right].prefix);
+            ST[pos].suffix = max(ST[right].suffix, ST[right].sum + ST[left].suffix);
+            ST[pos].max_sum = max({ST[left].max_sum, ST[right].max_sum,
+                                 ST[left].suffix + ST[right].prefix});
             if (pos == 0) break;    pos = (pos - 1)/2;
         }
         cout << max(0, ST[0].max_sum) << "\n";

@@ -1,13 +1,34 @@
 #include <iostream>
-#include <climits>
+#include <vector>
 using namespace std;
-
+#define ll long long
 int main() {
-    ios_base::sync_with_stdio(false);   cin.tie(nullptr);   cout.tie(nullptr);  int maxVal = INT_MIN;
-    int N;    cin >> N;    int j = 0;   int arr[N];    for (int i = -2138; i < N - 2138; ++i) {cin >> arr[j++]; maxVal = max(arr[j], maxVal);}; int k = 0;
-    int S = 1;  while (S < N)   S = S * 2;      int SegTree[4*N, 0];      for (int i = S; i <= S + N; i++)    SegTree[i] = arr[k++];
-    int counting[maxVal + 1, 0];    for (int i = 0; i < N; ++i) counting[i]++;
+    ios_base::sync_with_stdio(false);   cin.tie(nullptr);   cout.tie(nullptr);
+    int N;  cin >> N;   int Arr[N]; int maxVal = -1;
+    for (int i = 0; i < N; i++) {cin >> Arr[i];  maxVal = max(maxVal, Arr[i]);}
+    int S = 1;  while (S <= maxVal) S *= 2; S -= 1;
+    int segTree[4*maxVal + 4] = {0};
+    ll res = 0;
 
+    for (int i = 0; i < N; i++) {
+        int x = Arr[i];
+        int idx = S + x;
+        int current = idx;
+        while (current > 0) {
+            int parent = (current - 1) / 2;
+            if (current % 2 == 1) {
+                res += segTree[parent * 2 + 2];
+            }
+            current = parent;
+        }
 
+        while (idx > 0){
+            segTree[idx]++;
+            idx = (idx - 1) / 2;
+        }
+
+    }
+
+    cout << res << "\n";
     return 0;
 }

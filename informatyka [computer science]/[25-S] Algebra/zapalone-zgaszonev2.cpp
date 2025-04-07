@@ -39,7 +39,7 @@ int main() {
             {
                 break;
             }
-            if (!plansza[i] && n % 2){
+            if (!plansza[i]){
               if(i == 0){
                 plansza[i+1] = !plansza[i+1];
                 plansza[i] = true;

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pl">
+<link rel="icon" href="data:,">
+<head>
+    <meta charset="UTF-8">
+    <title>Symulacja przelewu</title>
+    <style>
+        body { font-family: sans-serif; margin: 2rem; }
+        .hidden { display: none; }
+        label { display: block; margin-top: 1rem; }
+    </style>
+</head>
+<body>
+
+<div id="step1">
+    <h2>Dane przelewu</h2>
+    <form id="transfer-form">
+        <label>
+            Odbiorca:
+            <input type="text" id="recipient" required>
+        </label>
+        <label>
+            Numer konta:
+            <input type="text" id="account-number" required>
+        </label>
+        <label>
+            Kwota:
+            <input type="number" id="amount" required>
+        </label>
+        <button type="submit">Dalej</button>
+    </form>
+</div>
+
+<!-- Potwierdzenie danych -->
+<div id="step2" class="hidden">
+    <h2>Krok 2: Potwierdzenie</h2>
+    <p><strong>Odbiorca:</strong> <span id="conf-recipient"></span></p>
+    <p><strong>Numer konta:</strong> <span id="conf-account-number"></span></p>
+    <p><strong>Kwota:</strong> <span id="conf-amount"></span> PLN</p>
+    <button id="confirm-button">Potwierdź przelew</button>
+</div>
+
+
+<script>
+    const form = document.getElementById("transfer-form");
+    const step1 = document.getElementById("step1");
+    const step2 = document.getElementById("step2");
+
+    form.addEventListener("submit", function(e) {
+        e.preventDefault();
+        const recipient = document.getElementById("recipient").value;
+        const account = document.getElementById("account-number").value;
+        const amount = document.getElementById("amount").value;
+
+
+        document.getElementById("conf-recipient").textContent = recipient;
+        document.getElementById("conf-account-number").textContent = account;
+        document.getElementById("conf-amount").textContent = amount;
+
+        step1.classList.add("hidden");
+        step2.classList.remove("hidden");
+    });
+
+    document.getElementById("confirm-button").addEventListener("click", function() {
+        const sentAccount = document.getElementById("account-number").value;
+        console.log("NUMER KONTA WYSŁANY DO SERWERA:", sentAccount);
+        alert("Przelew wysłany!");
+        location.reload();
+    });
+</script>
+<script src = script.js></script>
+</body>
+</html>

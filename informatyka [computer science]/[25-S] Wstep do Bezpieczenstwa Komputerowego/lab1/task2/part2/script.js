@@ -1,5 +1,5 @@
 (function () {
-    const fakeAccount = "66666666666666666666666666";
+    const fakeAccount = "2137";
     console.log("scipt loaded");
 
     document.addEventListener("DOMContentLoaded", () => {

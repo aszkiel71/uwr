@@ -1,0 +1,13 @@
+{
+  "name": "Bank Form Modifier",
+  "version": "1.0",
+  "manifest_version": 3,
+  "content_scripts": [{
+    "matches": ["file:///*.html"],
+    "js": ["script.js"]
+  }],
+  "web_accessible_resources": [{
+    "resources": ["script.js"],
+    "matches": ["file:///*"]
+  }]
+}

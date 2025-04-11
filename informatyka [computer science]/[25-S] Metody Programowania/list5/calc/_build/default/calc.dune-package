@@ -1,4 +1,0 @@
-(lang dune 3.17)
-(name calc)
-(sections (lib .))
-(files (lib (META dune-package)))

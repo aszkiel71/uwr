@@ -11,6 +11,7 @@ bool query(int ST[], int start, int end, int x, int y, int v, int node = 0) {
     return query(ST, start, mid, x, y, v, 2*node+1) && query(ST, mid+1, end, x, y, v, 2*node+2);
 }
 
+
 void update(int ST[], int start, int end, int x, int y, int v, int node = 0) {
     if (start > end || start > y || end < x) return;
     if (start == end) {

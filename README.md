@@ -6,9 +6,9 @@ So far completed courses:
 
 -> Calculus
 
--> Basic Computer Science Workshop
+-> Computing for Computer Scientists
 
--> Logic for Computer Scientists
+-> Logic for Computer Science
 
 -> Introduction to programming in Python.
 

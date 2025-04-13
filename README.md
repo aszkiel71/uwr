@@ -18,9 +18,9 @@ Courses I am in the process of taking:
 
 -> Practical Algorithms
 
--> Course: developing frontend applications [ENG]
+-> Front-end apps development[ENG]
 
--> Programming methods
+-> Programming methodology
 
 -> Algebra
 

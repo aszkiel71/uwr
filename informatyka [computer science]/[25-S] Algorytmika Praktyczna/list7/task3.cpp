@@ -39,11 +39,11 @@ int main() {
     int N,M,Q; cin >> N >> M >> Q;
     int S = 1; while(S <= N) S*=2; S--;
     int ST[4*N + 4];
-    int lazy[4*N + 4]; for (int i =0; i < 4*N; i++) lazy[i] = 0;
+    int lazy[4*N + 4]; for (int i = 0; i < 4*N; i++) lazy[i] = 0;
     for (int i = 0; i <= 4*N + 3; i++) {ST[i] = M;}
 
     while (Q--) {
-        int x, y, v; cin >> x >> y >> v;
+        int x, y, v; cin >> x >> y >> v; x--; y--; y--;
         if (query(ST, lazy, 0, N, x, y, v)) {
             cout << "T\n";
             update(ST, lazy, 0, N, x, y, v, 0);

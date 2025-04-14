@@ -6,9 +6,9 @@ So far completed courses:
 
 -> Calculus
 
--> Basic Computer Science Workshop
+-> Computing for Computer Scientists
 
--> Logic for Computer Scientists
+-> Logic for Computer Science
 
 -> Introduction to programming in Python.
 
@@ -18,9 +18,9 @@ Courses I am in the process of taking:
 
 -> Practical Algorithms
 
--> Course: developing frontend applications [ENG]
+-> Front-end apps development[ENG]
 
--> Programming methods
+-> Programming methodology
 
 -> Algebra
 

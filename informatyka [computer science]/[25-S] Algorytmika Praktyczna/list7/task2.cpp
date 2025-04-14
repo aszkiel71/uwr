@@ -1,6 +1,7 @@
 #include <iostream>
 using namespace std;
-
+#pragma GCC optimize("Ofast")
+#pragma GCC target("avx,bmi,bmi2,lzcnt,popcnt")
 int find(int ST[], int v, int S, int node = 0){
     if(node >= S) return node;
     if(ST[2*node + 1] >= v) return find(ST, v, S, 2*node + 1);

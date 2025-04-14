@@ -1,7 +1,8 @@
 #include <iostream>
 #include <vector>
 using namespace std;
-
+#pragma GCC optimize("Ofast")
+#pragma GCC target("avx,bmi,bmi2,lzcnt,popcnt")
 void propagate(int ST[], int lazy[], int start, int end, int node) {
     if (lazy[node] != 0) {
         ST[node] -= lazy[node];

@@ -1,0 +1,11 @@
+(lang dune 3.14)
+
+(name pair)
+
+(package
+  (name pair)
+  (allow_empty)
+  (depends ocaml dune))
+
+(using menhir 2.1)
+

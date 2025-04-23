@@ -5,6 +5,15 @@ const input = form.querySelector("input[name='todo-name']");
 const clearButton = document.getElementById("todos-clear");
 
 let todos = [
+    /*{ name: "Buy milk", completed: false },
+    { name: "Go to the gym", completed: true },
+    { name: "Read a book", completed: false },
+    { name: "Write code", completed: true },
+    { name: "Walk the dog", completed: false },
+    {
+        name: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris vel metus sed justo vehicula rutrum vel ut est. Maecenas a dictum nunc. Proin congue libero risus, et lobortis purus venenatis eu. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Morbi pulvinar ullamcorper tortor, quis cursus quam.",
+        completed: false,
+    },*/
 ];
 
 

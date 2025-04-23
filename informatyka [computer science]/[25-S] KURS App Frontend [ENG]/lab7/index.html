@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link
+          rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"
+  />
+  <link rel="stylesheet" href="styles.css" />
+  <title>Todo List</title>
+</head>
+<body>
+<div class="body__wrapper">
+  <header class="header__wrapper">
+    <h1>Hello, You!</h1>
+  </header>
+  <main class="main">
+    <section>
+      <form id="add-todo-form" class="add-item__container">
+        <input
+                name="todo-name"
+                type="text"
+                aria-label="add todo"
+                placeholder="What's on your mind?"
+                required
+                class="add-item__element add-item__input"
+        />
+        <button type="submit" class="add-item__element add-item__submit">
+          Add
+        </button>
+      </form>
+    </section>
+    <section class="todos__container">
+      <header class="todos-header__container">
+        <h2>
+          Todo List (<span id="count">4</span> remaining)
+          <button id="todos-clear" class="todos-clear">Clear all</button>
+        </h2>
+      </header>
+
+      <ul id="todo-list" class="todos__list">
+        <li class="todo__container">
+          <div class="todo-element todo-name">Buy milk</div>
+          <button class="todo-element todo-button move-up">↑</button>
+          <button class="todo-element todo-button move-down">↓</button>
+          <button class="todo-element todo-button">Done</button>
+          <button class="todo-element todo-button">Remove</button>
+        </li>
+        <li class="todo__container todo__container--completed">
+          <div class="todo-element todo-name">Go to the gym</div>
+          <button class="todo-element todo-button move-up">↑</button>
+          <button class="todo-element todo-button move-down">↓</button>
+          <button class="todo-element todo-button">Revert</button>
+          <button class="todo-element todo-button">Remove</button>
+        </li>
+        <li class="todo__container">
+          <div class="todo-element todo-name">Read a book</div>
+          <button class="todo-element todo-button move-up">↑</button>
+          <button class="todo-element todo-button move-down">↓</button>
+          <button class="todo-element todo-button">Done</button>
+          <button class="todo-element todo-button">Remove</button>
+        </li>
+        <li class="todo__container todo__container--completed">
+          <div class="todo-element todo-name">Write code</div>
+          <button class="todo-element todo-button move-up">↑</button>
+          <button class="todo-element todo-button move-down">↓</button>
+          <button class="todo-element todo-button">Revert</button>
+          <button class="todo-element todo-button">Remove</button>
+        </li>
+        <li class="todo__container">
+          <div class="todo-element todo-name">Walk the dog</div>
+          <button class="todo-element todo-button move-up">↑</button>
+          <button class="todo-element todo-button move-down">↓</button>
+          <button class="todo-element todo-button">Done</button>
+          <button class="todo-element todo-button">Remove</button>
+        </li>
+        <li class="todo__container">
+          <div class="todo-element todo-name">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris
+            vel metus sed justo vehicula rutrum vel ut est. Maecenas a
+            dictum nunc. Proin congue libero risus, et lobortis purus
+            venenatis eu. Orci varius natoque penatibus et magnis dis
+            parturient montes, nascetur ridiculus mus. Morbi pulvinar
+            ullamcorper tortor, quis cursus quam.
+          </div>
+          <button class="todo-element todo-button move-up">↑</button>
+          <button class="todo-element todo-button move-down">↓</button>
+          <button class="todo-element todo-button">Done</button>
+          <button class="todo-element todo-button">Remove</button>
+        </li>
+      </ul>
+    </section>
+  </main>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

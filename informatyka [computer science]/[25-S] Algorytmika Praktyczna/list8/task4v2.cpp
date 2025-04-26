@@ -2,7 +2,6 @@
 #include <vector>
 // too slow
 using namespace std;
-
 void dfs(int u, int v, int p, int &res, const vector<vector<int>>& tree, int dis = 0) {
     if (u == v) {res = dis;return;}
     for (int ver : tree[u]) {

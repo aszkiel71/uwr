@@ -5,10 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="22eefca8-eaab-4f8b-9b93-0df50a086110" name="Changes" comment="frontend">
-      <change afterPath="$PROJECT_DIR$/informatyka [computer science]/[25-S] KURS App Frontend [ENG]/lab9/game.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/informatyka [computer science]/[25-S] KURS App Frontend [ENG]/lab9/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/informatyka [computer science]/[25-S] KURS App Frontend [ENG]/lab9/tsconfig.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/informatyka [computer science]/[25-S] KURS App Frontend [ENG]/lab9/game.ts" beforeDir="false" afterPath="$PROJECT_DIR$/informatyka [computer science]/[25-S] KURS App Frontend [ENG]/lab9/game.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,6 +38,9 @@
     &quot;accountId&quot;: &quot;ccb57d9f-7c03-424a-8ce4-a918b3610041&quot;
   }
 }</component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 2
 }</component>
@@ -90,7 +91,7 @@
       <recent name="C:\Users\aszki\WebstormProjects\uwr\2025-Second-Session\KURS App Frontend [ENG]\lab4" />
     </key>
   </component>
-  <component name="RunManager" selected="Node.js.game.js">
+  <component name="RunManager" selected="Node.js.game.ts">
     <configuration name="content.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/informatyka [computer science]/[25-S] Wstep do Bezpieczenstwa Komputerowego/lab1/task2/part2/content.js" working-dir="$PROJECT_DIR$/informatyka [computer science]/[25-S] Wstep do Bezpieczenstwa Komputerowego/lab1/task2/part2">
       <method v="2" />
     </configuration>
@@ -108,8 +109,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Node.js.game.js" />
         <item itemvalue="Node.js.game.ts" />
+        <item itemvalue="Node.js.game.js" />
         <item itemvalue="Node.js.lab.js" />
         <item itemvalue="Node.js.content.js" />
         <item itemvalue="Node.js.script.js (1)" />
@@ -140,7 +141,7 @@
       <workItem from="1744197815826" duration="1406000" />
       <workItem from="1744199242619" duration="5062000" />
       <workItem from="1744280218106" duration="5343000" />
-      <workItem from="1746631335229" duration="1029000" />
+      <workItem from="1746631335229" duration="2370000" />
     </task>
     <task id="LOCAL-00001" summary="frontend-course-lab3">
       <option name="closed" value="true" />
@@ -182,7 +183,23 @@
       <option name="project" value="LOCAL" />
       <updated>1744819165964</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="frontend">
+      <option name="closed" value="true" />
+      <created>1746635072015</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1746635072015</updated>
+    </task>
+    <task id="LOCAL-00007" summary="frontend">
+      <option name="closed" value="true" />
+      <created>1746635108467</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1746635108467</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

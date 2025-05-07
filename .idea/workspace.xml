@@ -4,8 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="22eefca8-eaab-4f8b-9b93-0df50a086110" name="Changes" comment="wdb">
-      <change beforePath="$PROJECT_DIR$/informatyka [computer science]/[25-S] Wstep do Bezpieczenstwa Komputerowego/lab1/task2/part2/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/informatyka [computer science]/[25-S] Wstep do Bezpieczenstwa Komputerowego/lab1/task2/part2/script.js" afterDir="false" />
+    <list default="true" id="22eefca8-eaab-4f8b-9b93-0df50a086110" name="Changes" comment="frontend">
+      <change afterPath="$PROJECT_DIR$/informatyka [computer science]/[25-S] KURS App Frontend [ENG]/lab9/game.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/informatyka [computer science]/[25-S] KURS App Frontend [ENG]/lab9/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/informatyka [computer science]/[25-S] KURS App Frontend [ENG]/lab9/tsconfig.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,9 +18,10 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
         <option value="CSS File" />
+        <option value="HTML File" />
         <option value="JavaScript File" />
+        <option value="tsconfig.json" />
       </list>
     </option>
   </component>
@@ -44,63 +48,71 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
-    &quot;JavaScript Debug.index.html.executor&quot;: &quot;Run&quot;,
-    &quot;JavaScript Debug.strona-mbank.html.executor&quot;: &quot;Run&quot;,
-    &quot;Node.js.content.js.executor&quot;: &quot;Run&quot;,
-    &quot;Node.js.script.js (1).executor&quot;: &quot;Run&quot;,
-    &quot;Node.js.script.js.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/aszki/AppData/Roaming/JetBrains/WebStorm2024.3/node/versions/22.14.0&quot;,
-    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;settings.nodejs&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "DefaultHtmlFileTemplate": "HTML File",
+    "JavaScript Debug.index.html.executor": "Run",
+    "JavaScript Debug.strona-mbank.html.executor": "Run",
+    "Node.js.content.js.executor": "Run",
+    "Node.js.game.js.executor": "Run",
+    "Node.js.game.ts.executor": "Run",
+    "Node.js.lab.js.executor": "Run",
+    "Node.js.script.js (1).executor": "Run",
+    "Node.js.script.js.executor": "Run",
+    "Node.js.task1.js.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "C:/Users/aszki/AppData/Roaming/JetBrains/WebStorm2024.3/node/versions/22.14.0",
+    "list.type.of.created.stylesheet": "CSS",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "settings.nodejs",
+    "ts.external.directory.path": "C:\\Users\\aszki\\WebstormProjects\\uwr\\node_modules\\typescript\\lib",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\aszki\WebstormProjects\uwr\informatyka [computer science]\[25-S] Wstep do Bezpieczenstwa Komputerowego\lab1\task2" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\aszki\WebstormProjects\uwr\informatyka [computer science]\[25-S] KURS App Frontend [ENG]\lab9\dist" />
+      <recent name="C:\Users\aszki\WebstormProjects\uwr\informatyka [computer science]\[25-S] KURS App Frontend [ENG]\lab9" />
       <recent name="C:\Users\aszki\WebstormProjects\uwr\informatyka [computer science]\[25-S] Wstep do Bezpieczenstwa Komputerowego\lab1\task2" />
       <recent name="C:\Users\aszki\WebstormProjects\uwr\informatyka [computer science]\[25-S] Wstep do Bezpieczenstwa Komputerowego\lab1\task2\part1" />
       <recent name="C:\Users\aszki\WebstormProjects\uwr\2025-Second-Session\KURS App Frontend [ENG]\lab4" />
     </key>
   </component>
-  <component name="RunManager" selected="Node.js.content.js">
-    <configuration name="bank.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63343/uwr/informatyka [computer science]/[25-S] Wstep do Bezpieczenstwa Komputerowego/lab1/task2/part1/bank.html" useBuiltInWebServerPort="true">
-      <method v="2" />
-    </configuration>
-    <configuration name="index.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/uwr/2025-Second-Session/KURS App Frontend [ENG]/lab3/Lab/index.html" useBuiltInWebServerPort="true">
-      <method v="2" />
-    </configuration>
+  <component name="RunManager" selected="Node.js.game.js">
     <configuration name="content.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/informatyka [computer science]/[25-S] Wstep do Bezpieczenstwa Komputerowego/lab1/task2/part2/content.js" working-dir="$PROJECT_DIR$/informatyka [computer science]/[25-S] Wstep do Bezpieczenstwa Komputerowego/lab1/task2/part2">
+      <method v="2" />
+    </configuration>
+    <configuration name="game.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/informatyka [computer science]/[25-S] KURS App Frontend [ENG]/lab9/dist/game.js" working-dir="$PROJECT_DIR$/informatyka [computer science]/[25-S] KURS App Frontend [ENG]/lab9/dist">
+      <method v="2" />
+    </configuration>
+    <configuration name="game.ts" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/informatyka [computer science]/[25-S] KURS App Frontend [ENG]/lab9/game.ts" typescript-loader="bundled" working-dir="$PROJECT_DIR$/informatyka [computer science]/[25-S] KURS App Frontend [ENG]/lab9">
+      <method v="2" />
+    </configuration>
+    <configuration name="lab.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/informatyka [computer science]/[25-S] KURS App Frontend [ENG]/lab6/lab.js" working-dir="$PROJECT_DIR$/informatyka [computer science]/[25-S] KURS App Frontend [ENG]/lab6">
       <method v="2" />
     </configuration>
     <configuration name="script.js (1)" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/informatyka [computer science]/[25-S] Wstep do Bezpieczenstwa Komputerowego/lab1/task2/part2/script.js" working-dir="$PROJECT_DIR$/informatyka [computer science]/[25-S] Wstep do Bezpieczenstwa Komputerowego/lab1/task2/part2">
       <method v="2" />
     </configuration>
-    <configuration name="script.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/informatyka [computer science]/[25-S] Wstep do Bezpieczenstwa Komputerowego/lab1/task2/script.js" working-dir="$PROJECT_DIR$/informatyka [computer science]/[25-S] Wstep do Bezpieczenstwa Komputerowego/lab1/task2">
-      <method v="2" />
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Node.js.game.js" />
+        <item itemvalue="Node.js.game.ts" />
+        <item itemvalue="Node.js.lab.js" />
         <item itemvalue="Node.js.content.js" />
         <item itemvalue="Node.js.script.js (1)" />
-        <item itemvalue="Node.js.script.js" />
-        <item itemvalue="JavaScript Debug.index.html" />
       </list>
     </recent_temporary>
   </component>
@@ -128,6 +140,7 @@
       <workItem from="1744197815826" duration="1406000" />
       <workItem from="1744199242619" duration="5062000" />
       <workItem from="1744280218106" duration="5343000" />
+      <workItem from="1746631335229" duration="1029000" />
     </task>
     <task id="LOCAL-00001" summary="frontend-course-lab3">
       <option name="closed" value="true" />
@@ -161,7 +174,15 @@
       <option name="project" value="LOCAL" />
       <updated>1744284947488</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="frontend">
+      <option name="closed" value="true" />
+      <created>1744819165964</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1744819165964</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -171,6 +192,7 @@
     <MESSAGE value="frontend-course-lab3" />
     <MESSAGE value="frontend-course-lab4" />
     <MESSAGE value="wdb" />
-    <option name="LAST_COMMIT_MESSAGE" value="wdb" />
+    <MESSAGE value="frontend" />
+    <option name="LAST_COMMIT_MESSAGE" value="frontend" />
   </component>
 </project>

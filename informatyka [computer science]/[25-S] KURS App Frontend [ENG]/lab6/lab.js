@@ -108,7 +108,7 @@ const obj5 = {
     name: "Alice",
 };
 
-/*
+
 console.log("Should be True:", compareObjects(obj1, obj2));
 console.log("Should be True:", compareObjects(obj1, obj3));
 console.log("Should be False:", compareObjects(obj1, obj4));
@@ -118,7 +118,7 @@ console.log("Should be False:", compareObjects(obj3, obj4));
 console.log("Should be False:", compareObjects(obj1, obj5));
 console.log("Should be False:", compareObjects(obj5, obj1));
 
- */
+
 
 // ----------------------------------------
 // task5

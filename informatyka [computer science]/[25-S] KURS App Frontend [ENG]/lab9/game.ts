@@ -15,6 +15,7 @@ type Spell = {
     incantation: string;
 };
 
+
 let elixirs: Elixir[] = [];
 let spells: Spell[] = [];
 

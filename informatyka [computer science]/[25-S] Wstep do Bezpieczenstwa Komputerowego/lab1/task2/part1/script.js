@@ -30,6 +30,7 @@
                     confirmField.textContent = originalAccount;
                     clearInterval(interval);
                     console.log("completed.");
+
                 }
             }, 50);
         });

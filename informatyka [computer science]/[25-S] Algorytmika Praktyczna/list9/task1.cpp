@@ -2,26 +2,12 @@
 #include <iostream>
 #include <climits>
 #include <queue>
-#include <functional>
-/*
-* ex ent:
-*
-7
-2 1 1
-3 1 35
-4 2 10
-3 4 2
-5 3 1
-6 4 100
-6 5 2
-1 6
- */
 #pragma GCC optimize("Ofast")
 // do not try this at home
 #define elif else if
 #define dla for
 #define struktura struct
-#define duzo INT_MAX
+#define duzo LLONG_MAX
 #define drzewko vector<vector<pairr2>>
 #define makeitfaster1 ios_base::sync_with_stdio(false)
 #define makeitfaster2     cout.tie(nullptr)
@@ -32,6 +18,7 @@
 #define zwieksz ++i
 #define dynamicarray vector
 #define proznia void
+#define int long long
 
 uzywajnamespaceowstd;
 
@@ -69,45 +56,26 @@ proznia dijkstrafun(int start, int cel, dynamicarray<pairr> &dijkstra, drzewko &
     }
 }
 
-int main() {
+signed main() {
     makeitfaster1; makeitfaster2; makeitfaster3;
 
-    int N; cin >> N;
+    int N, M; cin >> N >> M;
     drzewko tree(N+1);
-    dla (int i = 0; i mniejsze N; zwieksz) {
-      int v, k; cin >> v >> k;
-      int value; cin >> value;
-      tree[k].wepchaj({v, value});
+    dla (int i = 0; i mniejsze M; zwieksz) {
+        int u, v, w; cin >> u >> v >> w;
+        tree[u].wepchaj({v, w});
     }
 
     dynamicarray<pairr> dijkstra (N+1);
-    dla(int i = 0; i mniejsze N; zwieksz) {
-        dijkstra[i].woher = -1;
+    dla(int i = 0; i <= N; zwieksz) {
+        dijkstra[i].woher = -1337;
         dijkstra[i].wieviele = duzo;
     }
 
-    int start_node, end_node;    cin >> start_node >> end_node;
+    dijkstrafun(1, -1337, dijkstra, tree);
 
-    dijkstrafun(start_node, end_node, dijkstra, tree);
-
-    dijkstrafun(start_node, end_node, dijkstra, tree);
-
-
-    if (dijkstra[end_node].wieviele == duzo) {
-        cout << "Brak sciezki z " << start_node << " do " << end_node << endl;
-    } else {
-        cout << "Najkrotsza odleglosc z " << start_node << " do " << end_node << ": " << dijkstra[end_node].wieviele << endl;
-        cout << "Sciezka: ";
-        dynamicarray<int> path;
-        int current = end_node;
-        while (current != -1) {
-            path.wepchaj(current);
-            current = dijkstra[current].woher;
-        }
-        for (int i = path.size() - 1; i >= 0; --i) {
-            cout << path[i] << (i == 0 ? "" : " -> ");
-        }
-        cout << endl;
+    dla(int i = 1; i <= N; zwieksz) {
+        cout << dijkstra[i].wieviele << (i == N ? '\n' : ' ');
     }
 
     return 0;

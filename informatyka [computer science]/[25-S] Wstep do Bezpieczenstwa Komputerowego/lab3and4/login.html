@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <title>Amber Gold - Przelew</title>
+</head>
+<body>
+<h1>Logowanie do Amber Gold</h1>
+<div id="g_id_signin"></div>
+
+<script src="https://accounts.google.com/gsi/client" async defer></script>
+<script>
+  function handleCredentialResponse(response) {
+    console.log("Token JWT: " + response.credential);
+    window.location.href = "/setup-2fa";
+  }
+
+  window.onload = function () {
+    google.accounts.id.initialize({
+      client_id: ":)",
+      callback: handleCredentialResponse
+    });
+    google.accounts.id.renderButton(
+            document.getElementById("g_id_signin"),
+            { theme: "outline", size: "large" }
+    );
+  }
+</script>
+</body>
+</html>

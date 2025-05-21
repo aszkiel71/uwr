@@ -1,0 +1,9 @@
+(executable
+ (public_name fun)
+ (name main)
+ (libraries fun))
+
+(executable
+ (public_name func)
+ (name func)
+ (libraries fun))

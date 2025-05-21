@@ -1,0 +1,1 @@
+let f = fun x y -> x + y in f 2 3

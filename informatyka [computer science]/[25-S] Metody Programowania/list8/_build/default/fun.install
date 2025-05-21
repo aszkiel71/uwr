@@ -1,0 +1,7 @@
+lib: [
+  "_build/install/default/lib/fun/META"
+  "_build/install/default/lib/fun/dune-package"
+]
+bin: [
+  "_build/install/default/bin/fun"
+]

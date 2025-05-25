@@ -1,7 +1,7 @@
 #include <iostream>
-#include <cstdint>
 #include <vector>
 #include <algorithm>
+#include <cstdint>
 #pragma GCC optimize("Ofast")
 
 typedef long long ll;
@@ -44,11 +44,12 @@ signed main() {
         adj[u].push_back(v);
     }
 
+
     for (int i = 1; i <= N; ++i) {
         std::sort(adj[i].begin(), adj[i].end());
     }
 
-    vector<int> state(N + 1, 0); // 0: unvisited, 1: visiting, 2: visited
+    vector<int> state(N + 1, 0);
     vector<int> order;
     bool has_cycle = false;
 
@@ -61,7 +62,9 @@ signed main() {
             }
         }
     }
+
     std::reverse(order.begin(), order.end());
+
     for (int v : order) {
         cout << v << ' ';
     }

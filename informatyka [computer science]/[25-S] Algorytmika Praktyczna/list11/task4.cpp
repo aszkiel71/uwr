@@ -35,7 +35,7 @@ signed main() {
     ll res = 0;
     while (N--) {
       ll x1, y1; cin >> x1 >> y1; x1 = x1 - x;
-        dl ratio = static_cast<dl>(y1) / x1;
+        dl ratio = (dl) (y1) /  (dl) x1;
         if (angles.count(ratio)) {continue;}
         angles.insert(ratio);
         res++;

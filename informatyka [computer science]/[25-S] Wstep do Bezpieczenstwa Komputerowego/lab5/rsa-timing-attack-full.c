@@ -8,6 +8,8 @@ int mod_reduce(uint64_t *a, uint64_t b) {
     int reductions = 0;
     if (*a >= b) {
         *a = *a % b;
+
+
         reductions = 1;
     }
     return reductions;

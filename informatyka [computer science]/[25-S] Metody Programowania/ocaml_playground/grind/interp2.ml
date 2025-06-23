@@ -59,7 +59,7 @@ let rec eval e env stk =
     | Assign(e1, e2) -> bind (eval e1 env stk) (fun (v, s) ->
                         bind (eval e2 env s) (fun (v2, s2) ->
                         match v with
-                         | VRef k -> return (VUnit, (k ,v2) :: (List.remove_assoc v s2 )), s2)
+                         | VRef k -> return (VUnit, (k , v2) :: (List.remove_assoc k s2 )), s2)
                          | _ -> failwith "expected reference")
     | Pair(e1, e2) -> bind (eval e1 env stk) (fun (v1, s1) ->
                            (eval e2 env s1) (fun (v2, s2) ->

@@ -40,7 +40,7 @@ def timing_attack_q(N, e, d, p, q, sample_count=300, t_threshold=2.0):
     q_bin = "{0:b}".format(q)
     bit_length = len(q_bin)
     guessed_bits = "1"
-    print(f"Prawdziwy q: {q_bin}")
+    print(f"Real q: {q_bin}")
 
     i = 1
     while i < bit_length:
@@ -66,21 +66,21 @@ def timing_attack_q(N, e, d, p, q, sample_count=300, t_threshold=2.0):
         gap = abs(avg_1 - avg_0) / max(avg_0, avg_1, 1)
 
         if abs(stat) < t_threshold:
-            print(f"Bit {i}: NIEPEWNY! | t-stat={stat:.2f}, gap={gap:.3f} | powtarzam pomiar...")
+            print(f"Bit {i}: UNSURE! | | |  t-stat={stat:.2f}, gap={gap:.3f} | repeating measure . . .")
             continue
 
         guessed_bit = "1" if avg_1 > avg_0 else "0"
-        print(f"Bit {i}: zgadnięty={guessed_bit}, rzeczywisty={q_bin[i]}, avg_0={avg_0:.1f}, avg_1={avg_1:.1f}, gap={gap:.3f}, t-stat={stat:.2f}")
+        print(f"Bit {i}: gussed={guessed_bit}, real={q_bin[i]}, avg_0={avg_0:.1f}, avg_1={avg_1:.1f}, gap={gap:.3f}, t-stat={stat:.2f}")
         guessed_bits += guessed_bit
         i += 1
 
-    print("\nZgadnięty q:")
+    print("\nGuessed q:")
     print(guessed_bits)
-    print("Rzeczywisty q:")
+    print("Real q:")
     print(q_bin)
     correct = sum(1 for a, b in zip(guessed_bits, q_bin) if a == b)
-    print(f"Poprawnie zgadniętych bitów: {correct} / {bit_length}")
-    print("\nTiming attack zakończony!")
+    print(f"Correct: {correct} / {bit_length}")
+
 
 if __name__ == "__main__":
     N, e, d, p, q = GenRSA(nbits=12)

@@ -6,7 +6,7 @@ type expr =
     | Ref of expr | Deref of expr | Assign of expr * expr
     | Pair of expr * expr | Fst of expr | Snd of expr
     | TryCatch of expr * expr | Fix of expr
-    | App of expr * expr
+    | App of expr * expr    | Match expr * string * string * expr
 and typ =
     | TInt | TBool | TRef of typ | TPair of typ * typ
     | TLambda of typ * typ | TUnit
@@ -75,4 +75,6 @@ let rec eval e env stk =
     | TryCatch(e1, e2) -> (match eval e1 env stk with
             | Some (v1, s1) -> return (v1, s1)
             | None -> eval e2 env stk)
-    | Fix(e) ->
+    | Match(e1, s1, s2, e2) -> bind (eval e1 env stk) (fun (v1, s1) -> match v1 with
+                            | VPair(x, y) -> eval e2 ( (s1, x) :: (s2, y) :: env) s1
+                            | _ -> failwith "expected pair")

@@ -6,7 +6,7 @@ type expr =
     | Ref of expr | Deref of expr | Assign of expr * expr
     | Pair of expr * expr | Fst of expr | Snd of expr
     | TryCatch of expr * expr | Fix of expr
-    | App of expr * expr
+    | App of expr * expr    | Match of expr * string * string * expr
 and typ =
     | TInt | TBool | TRef of typ | TPair of typ * typ
     | TLambda of typ * typ | TUnit
@@ -81,7 +81,10 @@ let rec eval e env stk =
     | Snd(e) -> let (v1, s1) = eval e env stk in (match e with
                                                   | VPair(_, b) -> (b, s1)
                                                   | _ -> failwith "expected pair")
-
+    | Match(e1, s1, s2, e2) ->  (if s1 = s2 then failwith "cannot do that" else ();
+                                match eval e1 env stk with
+                                | VPair(x, y) -> eval e2 ((s1, x) :: (s2, y) :: env) stk
+                                | _ -> failwith "expected pair")
 
 let rec type_checker e tenv stk =
     let check exp t = if (type_checker exp tenv stk) = t then () else failwith "type error" in
@@ -114,3 +117,8 @@ let rec type_checker e tenv stk =
     | Fix(e) -> (match type_checker e tenv stk in
                  | TLambda(t1, t2) -> if t1 = t2 then t1 else failwith "type error"
                  | _ -> failwith "type error")
+    | Match(e1, s1, s2, e2) -> let t = type_check e1 tenv stk in
+                                 (match t with
+                                 | TPair(t1, t2) -> type_check e2 ( (s1, t1) :: (s2, t2) :: tenv ) stk
+                                 | _ -> failwith "expected pair"
+                                 )

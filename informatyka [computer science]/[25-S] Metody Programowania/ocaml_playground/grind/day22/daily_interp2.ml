@@ -43,5 +43,16 @@ let rec eval e env stk =
     | Bool false -> eval e2 env stk
     | _ -> failwith "condition must be bool"
     )
-    | Ref e -> id := !id + 1; bind (eval e env stk) (fun (v, stk) -> return (VRef !id , (v, !id) :: stk))
-    | Deref
+    | Ref e -> id := !id + 1; bind (eval e env stk) (fun (v, stk) -> return (VRef !id , (!id, v) :: stk))
+    | Deref e -> bind (eval e env stk) (fun (v, stk) -> match v with
+                                       | VRef i -> return (lookup_env i stk, stk)
+                                       | _ -> failwith "expected reference")
+    | Assign (e1, e2) ->
+        bind (eval e1 env stk) (fun (v1, s1) ->
+        bind (eval e2 env s1) (fun (v2, s2) ->
+        (match v1 with
+        | VRef i ->
+            let stk' = (i, v2) :: (List.remove_assoc i s2) in
+            return (v2, stk')
+        | _ -> failwith "assign: left side must be a reference"
+    )))

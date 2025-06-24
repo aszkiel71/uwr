@@ -12,7 +12,7 @@ and typ =
     | TLambda of typ * typ | TUnit
 
 type value =
-    | VInt of int | VBool of bool | VRef of value
+    | VInt of int | VBool of bool | VRef of int
     | VClosure of string * expr * env   | VUnit
     | VRecClosure of string * string * expr * env
 and env = (string * value) list
@@ -62,8 +62,8 @@ let rec eval e env stk =
                      let (v2, s2) = eval e2 env s1 in
                      (
                      match v1 with
-                     | VClosure(s, body, _, venv) -> eval body ( (s, v2) :: venv) s2
-                     | VRecClosure(f, x, body, _, _, venv) -> eval body ( (f, v1) :: (x, v2) :: venv) s2
+                     | VClosure(s, body, venv) -> eval body ( (s, v2) :: venv) s2
+                     | VRecClosure(f, x, body, venv) -> eval body ( (f, v1) :: (x, v2) :: venv) s2
                      | _ -> failwith "expected function"
                      )
     | TryCatch(e1, e2) -> (try eval e1 env stk with _ -> eval e2 env stk)

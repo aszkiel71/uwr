@@ -4,7 +4,7 @@
 
 #### 3 sem
 
-###### [Discrete Mathematics (Advanced version)](https://github.com/aszkiel71/uwr/tree/main/informatyka%20%5Bcomputer%20science%5D/%5B25-W%5D%20Matematyka%20Dyskretna%20M)
+###### [Discrete Mathematics (Advanced)](https://github.com/aszkiel71/uwr/tree/main/informatyka%20%5Bcomputer%20science%5D/%5B25-W%5D%20Matematyka%20Dyskretna%20M)
 ###### [Efficient Implementation of Algorithms](https://github.com/aszkiel71/uwr/tree/main/informatyka%20%5Bcomputer%20science%5D/%5B25-W%5D%20MIA)
 ###### [Numerical Analysis](https://github.com/aszkiel71/uwr/tree/main/informatyka%20%5Bcomputer%20science%5D/%5B25-W%5D%20Analiza%20Numeryczna)
 ###### [Machine Learning](https://github.com/aszkiel71/uwr/tree/main/informatyka%20%5Bcomputer%20science%5D/%5B25-W%5D%20Uczenie%20Maszynowe)

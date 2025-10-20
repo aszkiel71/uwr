@@ -4,12 +4,11 @@
 
 #### 3 sem
 
+###### [Machine Learning](https://github.com/aszkiel71/uwr/tree/main/informatyka%20%5Bcomputer%20science%5D/%5B25-W%5D%20Uczenie%20Maszynowe)
 ###### [Discrete Mathematics (Advanced)](https://github.com/aszkiel71/uwr/tree/main/informatyka%20%5Bcomputer%20science%5D/%5B25-W%5D%20Matematyka%20Dyskretna%20M)
 ###### [Efficient Implementation of Algorithms](https://github.com/aszkiel71/uwr/tree/main/informatyka%20%5Bcomputer%20science%5D/%5B25-W%5D%20MIA)
 ###### [Numerical Analysis](https://github.com/aszkiel71/uwr/tree/main/informatyka%20%5Bcomputer%20science%5D/%5B25-W%5D%20Analiza%20Numeryczna)
-###### [Machine Learning](https://github.com/aszkiel71/uwr/tree/main/informatyka%20%5Bcomputer%20science%5D/%5B25-W%5D%20Uczenie%20Maszynowe)
-
-
+###### [Programming in C](https://github.com/aszkiel71/uwr/tree/main/informatyka%20%5Bcomputer%20science%5D/%5B25-W%5D%20Programowanie%20w%20C)
 _________
 #### 2 sem
 
@@ -24,7 +23,7 @@ _________
 #### 1 sem
 
 ###### [Introduction to Computer Science](https://github.com/aszkiel71/uwr/tree/main/informatyka%20%5Bcomputer%20science%5D/%5B24-W%5D%20Wstep%20do%20informatyki)
-###### [Introduction to programming in Python](https://github.com/aszkiel71/uwr/tree/main/informatyka%20%5Bcomputer%20science%5D/%5B24-W%5D%20Wstep%20do%20pythona)
+###### [Programming in Python](https://github.com/aszkiel71/uwr/tree/main/informatyka%20%5Bcomputer%20science%5D/%5B24-W%5D%20Wstep%20do%20pythona)
 
 ###### Calculus 
 
@@ -32,4 +31,4 @@ _________
 
 ###### Logic for Computer Science
 
-###### English Course B2-II - SJPNO
+###### English C1 SPNJO UWr

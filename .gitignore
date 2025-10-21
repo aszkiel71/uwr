@@ -1,2 +1,5 @@
 .idea/
 *.exe
+# C#
+[Bb]in/
+[Oo]bj/

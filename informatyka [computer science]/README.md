@@ -8,7 +8,6 @@
 ###### [Discrete Mathematics (Advanced)](https://github.com/aszkiel71/uwr/tree/main/informatyka%20%5Bcomputer%20science%5D/%5B25-W%5D%20Matematyka%20Dyskretna%20M)
 ###### [Efficient Implementation of Algorithms](https://github.com/aszkiel71/uwr/tree/main/informatyka%20%5Bcomputer%20science%5D/%5B25-W%5D%20MIA)
 ###### [Numerical Analysis](https://github.com/aszkiel71/uwr/tree/main/informatyka%20%5Bcomputer%20science%5D/%5B25-W%5D%20Analiza%20Numeryczna)
-###### [Programming in C](https://github.com/aszkiel71/uwr/tree/main/informatyka%20%5Bcomputer%20science%5D/%5B25-W%5D%20Programowanie%20w%20C)
 _________
 #### 2 sem
 
@@ -25,9 +24,9 @@ _________
 ###### [Introduction to Computer Science](https://github.com/aszkiel71/uwr/tree/main/informatyka%20%5Bcomputer%20science%5D/%5B24-W%5D%20Wstep%20do%20informatyki)
 ###### [Programming in Python](https://github.com/aszkiel71/uwr/tree/main/informatyka%20%5Bcomputer%20science%5D/%5B24-W%5D%20Wstep%20do%20pythona)
 
-###### Calculus 
+###### Calculus
 
-###### Computing for Computer Scientists 
+###### Computing for Computer Scientists
 
 ###### Logic for Computer Science
 

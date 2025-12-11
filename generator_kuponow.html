@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deklaracje UWr - Casino Royale Edition</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Roboto+Mono:wght@400;500&family=Times+New+Roman&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f0f0f0;
+            font-family: 'Times New Roman', Times, serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        @page {
+            size: A4;
+            margin: 0mm;
+        }
+
+        .sheet {
+            background: white;
+            width: 210mm;
+            height: 296mm;
+            margin: 0 auto;
+            padding: 10mm;
+            box-sizing: border-box;
+            display: grid;
+            grid-template-rows: repeat(6, 1fr);
+            row-gap: 2mm;
+        }
+
+        .coupon {
+            border: 1px solid #000;
+            padding: 4px 15px;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 2px;
+            overflow: hidden;
+        }
+
+        .coupon:not(:last-child)::after {
+            content: '';
+            position: absolute;
+            bottom: -1.5mm;
+            left: 0;
+            width: 100%;
+            border-bottom: 1px dashed #999;
+            z-index: 20;
+        }
+
+        .header-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            gap: 10px;
+            position: relative;
+            z-index: 10;
+        }
+
+        .field {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .field label {
+            font-size: 0.75rem;
+            font-weight: bold;
+            margin-bottom: 1px;
+        }
+
+        .field input {
+            border: none;
+            border-bottom: 1px dotted #000;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 0.9rem;
+            padding: 0 5px;
+            background: transparent;
+            font-weight: bold;
+            height: 1.2rem;
+        }
+
+        .field-subject { flex: 2; }
+        .field-name { flex: 3; }
+        .field-group { flex: 1; }
+
+        .points-grid {
+            display: grid;
+            grid-template-columns: 30px repeat(15, 1fr) 50px;
+            border-top: 1px solid #000;
+            border-left: 1px solid #000;
+            font-size: 0.65rem;
+            margin-top: 2px;
+            position: relative;
+            z-index: 10;
+            background: rgba(255,255,255,0.4);
+            backdrop-filter: blur(1px);
+        }
+
+        .grid-cell {
+            border-right: 1px solid #000;
+            border-bottom: 1px solid #000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 18px;
+            text-align: center;
+        }
+
+        .grid-header {
+            font-weight: bold;
+            background-color: rgba(234, 234, 234, 0.8);
+        }
+
+        /* --- ZMIANY W ALL IN CONTAINER --- */
+        .all-in-container {
+            height: 50px; /* Troszkę wyższe */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 2px solid #000;
+            margin-top: 2px;
+            position: relative;
+            background-color: rgba(255,255,255,0.6);
+            z-index: 10;
+            backdrop-filter: blur(2px);
+            gap: 15px; /* Odstęp między ikonami a tekstem */
+            overflow: hidden;
+        }
+
+        .all-in-text {
+            font-family: 'Bangers', cursive;
+            font-size: 3.2rem;
+            color: #000;
+            letter-spacing: 2px;
+            transform: rotate(-2deg);
+            text-shadow: 2px 2px 0px #ccc;
+            line-height: 1;
+            position: relative;
+            z-index: 2;
+        }
+
+        .casino-icon {
+            width: 35px;
+            height: 35px;
+            opacity: 0.8;
+            color: #1a202c;
+        }
+
+        /* Absolutne pozycjonowanie dekoracji wewnątrz pudełka ALL IN */
+        .casino-decor-bg {
+            position: absolute;
+            opacity: 0.1;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            z-index: 0;
+        }
+
+        .footer-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 2px;
+            font-size: 0.65rem;
+            font-style: italic;
+            position: relative;
+            z-index: 10;
+        }
+
+        .date-sum-row {
+            display: flex;
+            justify-content: flex-end;
+            gap: 20px;
+            margin-top: 2px;
+            position: relative;
+            z-index: 10;
+        }
+
+        .small-input {
+            width: 80px;
+            border: none;
+            border-bottom: 1px dotted #000;
+            text-align: center;
+            font-size: 0.8rem;
+        }
+
+        /* --- Styl dla OGNIA i PORSCHE w tle --- */
+        .doodle-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            pointer-events: none;
+            overflow: hidden;
+        }
+
+        .doodle {
+            position: absolute;
+            opacity: 0.18;
+            color: #2d3748;
+        }
+
+        /* Pozycje */
+        .pos-1 { bottom: -15px; right: -10px; width: 120px; height: 120px; transform: rotate(-15deg); }
+        .pos-2 { top: -5px; left: 10px; width: 90px; height: 90px; transform: rotate(10deg); }
+        .pos-3 { top: 50%; left: 50%; width: 220px; height: 220px; transform: translate(-50%, -50%) rotate(-10deg); opacity: 0.12; }
+        .pos-4 { bottom: -5px; left: -10px; width: 100px; height: 100px; transform: rotate(20deg); }
+        .pos-5 { top: 0px; right: 20px; width: 80px; height: 80px; transform: rotate(-5deg); }
+
+        @media print {
+            body, html { height: 100%; width: 100%; }
+            body { background: none; }
+            .sheet { width: 100%; height: 100%; margin: 0; padding: 10mm; box-shadow: none; }
+            .no-print { display: none !important; }
+            .coupon { page-break-inside: avoid; }
+            .grid-header { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+            .doodle, .casino-icon { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="fixed top-4 right-4 no-print z-50">
+        <button onclick="window.print()" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded shadow-lg flex items-center gap-2">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z" />
+            </svg>
+            Drukuj (PDF)
+        </button>
+    </div>
+
+    <div class="sheet" id="coupon-sheet"></div>
+
+    <script>
+        const sheet = document.getElementById('coupon-sheet');
+        const name = "Wojtek Aszkiełowicz";
+        const tasks = Array.from({length: 15}, (_, i) => i + 1);
+
+        const icons = [
+            // 0: Porsche 911
+            `<svg viewBox="0 0 100 40" fill="currentColor"><path d="M12,25 C12,29.4 15.6,33 20,33 C24.4,33 28,29.4 28,25 C28,24.5 27.9,24 27.8,23.5 L28,23 L75,23 L85,25 C85,29.4 88.6,33 93,33 C97.4,33 100,29.4 100,25 C100,23.8 99.7,22.6 99.2,21.6 L92,8 L50,5 L28,10 L15,18 C13.2,19.8 12.2,22.3 12,25 Z M20,29 C17.8,29 16,27.2 16,25 C16,22.8 17.8,21 20,21 C22.2,21 24,22.8 24,25 C24,27.2 22.2,29 20,29 Z M93,29 C90.8,29 89,27.2 89,25 C89,22.8 90.8,21 93,21 C95.2,21 97,22.8 97,25 C97,27.2 95.2,29 93,29 Z M30,12 L48,8 L90,10 L94,18 L30,18 L30,12 Z" /></svg>`,
+            // 1: HUGE FIRE
+            `<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C9.5 4 6 7 6 12C6 13.5 6.5 15 7.5 16C6.5 14.5 6 13 6 11.5C6 10.5 6.2 9.5 6.5 8.5C4 10.5 2 13.5 2 17C2 20.3 4.7 23 8 23C11.3 23 14 20.3 14 17C14 16 13.7 15 13.2 14.2C13.5 14.4 13.8 14.8 14 15.2C14.5 14 14.5 12.5 14 11.5C14.5 12 15 12.5 15.5 13C15.8 13.3 16 13.8 16 14.5C16 15.2 15.7 16 15.2 16.5C17 15.5 18 14 18 12.5C18 11.5 17.5 10.5 16.5 9.5C17 10 17.5 10.5 17.8 11.2C18.5 10 18.5 8.5 18 7.5C18.5 8 19 8.5 19.5 9C21 10.5 22 12.5 22 15C22 19 19 22 15.5 22C15.8 22.5 16.5 23 17 23C20.3 23 23 20.3 23 17C23 13.5 21.5 10.5 19 8.5C19 7.5 18 6.5 16.5 5.5C16.5 4.5 15.5 3.5 14 2.5C13.5 2.2 12.8 2 12 2Z"/></svg>`,
+            // 2: Gigachad Arm
+            `<svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 7c-1.1 0-2 .9-2 2v4c0 1.1-.9 2-2 2h-2v-2h2V9c0-2.21 1.79-4 4-4h2v2h-2zM7 4c-1.66 0-3 1.34-3 3v.26c-1.69.71-3 2.48-3 4.74 0 2.76 2.24 5 5 5h4c.55 0 1-.45 1-1V9c0-2.76-2.24-5-5-5zm0 2c1.65 0 3 1.35 3 3v3H6v-3c0-1.65 1.35-3 3-3z"/></svg>`,
+            // 3: Rocket
+            `<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.5s-4 4.5-6 11c0 0 2-1 6-1s6 1 6 1-2-6.5-6-11zm0 13c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"/><path d="M4.5 16.5c.83 0 1.5-.67 1.5-1.5 0-.83-.67-1.5-1.5-1.5S3 14.17 3 15s.67 1.5 1.5 1.5zm15 0c.83 0 1.5-.67 1.5-1.5 0-.83-.67-1.5-1.5-1.5S18 14.17 18 15s.67 1.5 1.5 1.5z"/></svg>`,
+            // 4: Checkered Flag
+            `<svg viewBox="0 0 24 24" fill="currentColor"><path d="M14.4,6L14,4H5v17h2v-7h5.6l0.4,2h7V6H14.4z M12,14H7v-4h5V14z M18,14h-4v-4h4V14z M12,8H7V6h5V8z M18,8h-4V6h4V8z"/></svg>`,
+            // 5: Flame Icon 2
+            `<svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.5.67s.74 2.65.74 4.8c0 2.06-1.35 3.73-3.41 3.73-2.07 0-3.63-1.67-3.63-3.73l.03-.36C5.21 7.51 4 10.62 4 14c0 4.42 3.58 8 8 8s8-3.58 8-8C20 8.61 17.41 3.8 13.5.67zM11.71 19c-1.78 0-3.22-1.4-3.22-3.14 0-1.62 1.05-2.76 2.81-3.12 1.77-.36 3.6-1.21 4.62-2.58.39 1.29.59 2.65.59 4.04 0 2.65-2.15 4.8-4.8 4.8z"/></svg>`
+        ];
+
+        // Nowe ikony specjalnie do pudełka ALL IN
+        const casinoIcons = {
+            dice: `<svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM7.5 18c-.83 0-1.5-.67-1.5-1.5S6.67 15 7.5 15s1.5.67 1.5 1.5S8.33 18 7.5 18zm0-9C6.67 9 6 8.33 6 7.5S6.67 6 7.5 6 9 6.67 9 7.5 8.33 9 7.5 9zm4.5 4.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm4.5 4.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm0-9c-.83 0-1.5-.67-1.5-1.5S15.67 6 16.5 6s1.5.67 1.5 1.5S17.33 9 16.5 9z"/></svg>`,
+            cards: `<svg viewBox="0 0 24 24" fill="currentColor"><path d="M20 4h-5l6 10.4L20 4zm-2 12l-1 1.73L11 7l2-2h5l-2 3.46L18 16zM4 4h5l-6 10.4L4 4zm2 12l1 1.73L13 7l-2-2H6l2 3.46L6 16z" /><rect x="4" y="2" width="6" height="8" rx="1" fill="currentColor" opacity="0.5" transform="rotate(-15 7 6)"/><rect x="14" y="2" width="6" height="8" rx="1" fill="currentColor" opacity="0.5" transform="rotate(15 17 6)"/></svg>`, // Simplified visual
+            cards_aces: `<svg viewBox="0 0 24 24" fill="currentColor"><path d="M2.5 19.5L4.23 18.5C4.9 19.65 6.11 20.42 7.5 20.42C9.57 20.42 11.25 18.74 11.25 16.67C11.25 14.6 9.57 12.92 7.5 12.92C6.11 12.92 4.9 13.68 4.23 14.83L2.5 13.83C3.46 12.21 5.29 11.08 7.5 11.08C10.58 11.08 13.08 13.58 13.08 16.67C13.08 19.75 10.58 22.25 7.5 22.25C5.29 22.25 3.46 21.13 2.5 19.5ZM21.5 19.5L19.77 18.5C19.1 19.65 17.89 20.42 16.5 20.42C14.43 20.42 12.75 18.74 12.75 16.67C12.75 14.6 14.43 12.92 16.5 12.92C17.89 12.92 19.1 13.68 19.77 14.83L21.5 13.83C20.54 12.21 18.71 11.08 16.5 11.08C13.42 11.08 10.92 13.58 10.92 16.67C10.92 19.75 13.42 22.25 16.5 22.25C18.71 22.25 20.54 21.13 21.5 19.5Z"/></svg>`, // Abstract spades/clubs
+            poker_chip: `<svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2" fill="none"/><circle cx="12" cy="12" r="6" stroke="currentColor" stroke-width="1" stroke-dasharray="2,2" fill="none"/><path d="M12 4V2M12 22v-2M4 12H2M22 12h-2M6.34 6.34L4.93 4.93M19.07 19.07l-1.41-1.41M6.34 17.66L4.93 19.07M19.07 4.93l-1.41 1.41" stroke="currentColor" stroke-width="2"/></svg>`
+        };
+
+        function createCoupon(isAllIn = false, index = 0) {
+            const div = document.createElement('div');
+            div.className = 'coupon';
+
+            let doodlesHtml = '<div class="doodle-container">';
+
+            const positions = [1, 2, 3, 4, 5].sort(() => 0.5 - Math.random()).slice(0, 3);
+
+            let chosenIcons = [];
+            if(isAllIn) {
+                 // ALL IN: Porsche + Fire + Losowy
+                 chosenIcons = [1, 0, (Math.random() > 0.5 ? 2 : 5)];
+            } else {
+                 positions.forEach((_, i) => {
+                    chosenIcons.push((index + i) % icons.length);
+                 });
+            }
+
+            positions.forEach((posNum, i) => {
+                doodlesHtml += `<div class="doodle pos-${posNum}">${icons[chosenIcons[i]]}</div>`;
+            });
+
+            doodlesHtml += '</div>';
+            div.innerHTML = doodlesHtml;
+
+            div.innerHTML += `
+                <div class="header-row">
+                    <div class="field field-subject">
+                        <label>Przedmiot:</label>
+                        <input type="text" placeholder="">
+                    </div>
+                    <div class="field field-name">
+                        <label>Imię i nazwisko:</label>
+                        <input type="text" value="${name}">
+                    </div>
+                    <div class="field field-group">
+                        <label>Grupa:</label>
+                        <input type="text" placeholder="">
+                    </div>
+                </div>
+            `;
+
+            if (isAllIn) {
+                div.innerHTML += `
+                    <div class="all-in-container">
+                         <!-- Lewa strona: Karty -->
+                        <div class="casino-icon" style="transform: rotate(-15deg); margin-right: auto;">${casinoIcons.dice}</div>
+
+                        <span class="all-in-text">ALL IN</span>
+
+                        <!-- Prawa strona: Kości -->
+                        <div class="casino-icon" style="transform: rotate(15deg); margin-left: auto;">${casinoIcons.cards}</div>
+
+                        <!-- Tło: Żetony -->
+                        <div class="casino-decor-bg">
+                             ${casinoIcons.poker_chip}
+                             <div style="width: 100px;"></div> <!-- Spacja na tekst -->
+                             ${casinoIcons.poker_chip}
+                        </div>
+                    </div>
+                `;
+            } else {
+                let gridHtml = '<div class="points-grid">';
+                gridHtml += '<div class="grid-cell grid-header">Zad.</div>';
+                tasks.forEach(t => gridHtml += `<div class="grid-cell grid-header">${t}</div>`);
+                gridHtml += '<div class="grid-cell grid-header">Suma</div>';
+
+                gridHtml += '<div class="grid-cell grid-header">Pkt</div>';
+                tasks.forEach(t => gridHtml += `<div class="grid-cell"></div>`);
+                gridHtml += `<div class="grid-cell"></div>`;
+
+                gridHtml += '</div>';
+                div.innerHTML += gridHtml;
+            }
+
+            div.innerHTML += `
+                 <div class="date-sum-row">
+                    <div>
+                        Data: <input type="text" class="small-input" value="">
+                    </div>
+                </div>
+                <div class="footer-row">
+                    <span>Wypełniać czytelnie i bez skreśleń drukowanymi literami.</span>
+                </div>
+            `;
+            return div;
+        }
+
+        for (let i = 0; i < 3; i++) {
+            sheet.appendChild(createCoupon(true, i));
+        }
+
+        for (let i = 3; i < 6; i++) {
+            sheet.appendChild(createCoupon(false, i));
+        }
+    </script>
+</body>
+</html>

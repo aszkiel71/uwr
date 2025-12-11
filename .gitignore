@@ -6,3 +6,6 @@
 *.csv
 *.gz
 *.pkl
+*.txt
+*.npy
+*.png

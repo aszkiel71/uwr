@@ -9,3 +9,9 @@
 *.txt
 *.npy
 *.png
+
+# VS Solution files
+*.sln
+
+# Competitive Programming Helper
+.cph/

@@ -17,3 +17,5 @@
 .cph/
 
 .venv/
+*.json
+*.npz

@@ -52,6 +52,19 @@ object Utils {
     else (x: A) => f(repeated2(f, n - 1)(x))
  }
 
+
+ def repeated3[A](f: A => A, n : Int): A => A {
+   (x: A) => {
+      val i = 0
+      val cur = x
+      while (i < n) {
+        cur = f(cur)
+        i += 1
+      }
+   }
+   cur
+ }
+
  def curry[A, B, C](f : (A, B) => C): A => (B => C) = {
     (a : A) => (b: B) => f(a, b)
  }

@@ -1,0 +1,54 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{polski}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{geometry}
+\geometry{margin=2.5cm}
+
+\begin{document}
+{\small \noindent RPIS, zadanie 2, Wojtek Aszkiełowicz, 353873}
+\vspace{0.2cm}
+\hrule
+\vspace{0.8cm}
+
+\section*{Opis metody}
+
+Celem zadania jest obliczenie dystrybuanty rozkładu $F(m,k)$:
+$$ F(x) = \int_0^x f(t) dt, \quad x > 0 $$
+
+Aby uniknąć problemów numerycznych dla $t=0$, wzór na gęstość przekształciłem do postaci:
+$$ f(t) = \frac{m^{m/2} k^{k/2} t^{m/2-1}}{B(m/2, k/2) (mt+k)^{(m+k)/2}} $$
+Z założenia zadania $m > 1$, więc wyrażenie $t^{m/2-1}$ nie dąży do nieskończoności w $t = 0$.
+
+Do obliczenia stałej normującej wykorzystałem własności funkcji $\Gamma$:
+$$ B(p,q) = \frac{\Gamma(p)\Gamma(q)}{\Gamma(p+q)} $$
+Zależność ta wynika z postaci całkowej obu funkcji. Zapisując iloczyn jako całkę podwójną, otrzymuję:
+$$ \Gamma(p)\Gamma(q) = \left( \int_0^\infty x^{p-1} e^{-x} dx \right) \left( \int_0^\infty y^{q-1} e^{-y} dy \right) = \int_0^\infty \int_0^\infty x^{p-1} y^{q-1} e^{-(x+y)} dx dy $$
+Dokonuję zmiany zmiennych $x = uv$ oraz $y = u(1-v)$, gdzie $u \in (0, \infty)$ i $v \in (0, 1)$. Jakobian przekształcenia wynosi $u$. Po podstawieniu całka rozdziela się:
+$$ \int_0^\infty e^{-u} u^{p+q-1} du \cdot \int_0^1 v^{p-1} (1-v)^{q-1} dv $$
+Pierwsza całka to $\Gamma(p+q)$, a druga to $B(p,q)$. Stąd $\Gamma(p)\Gamma(q) = \Gamma(p+q)B(p,q)$.
+
+Wartości funkcji $\Gamma$ wyznaczam analitycznie. Dla $n \in \mathbb{N}$:
+$$ \Gamma(n) = (n-1)! $$
+Dla argumentów postaci $n = c + 0.5$, gdzie $c \in \mathbb{N}$, korzystam z relacji $\Gamma(x+1) = x \Gamma(x)$ oraz $\Gamma(0.5) = \sqrt{\pi}$:
+$$ \Gamma(c + 0.5) = (c - 0.5)(c - 1.5) \dots 0.5 \cdot \Gamma(0.5) = \frac{(2c-1)!!}{2^c} \sqrt{\pi} $$
+Z definicji silni wiemy, że $(2c)!$ to iloczyn liczb parzystych i nieparzystych, co zapisuję jako $(2c)! = (2^c c!) \cdot (2c-1)!!$. Wyznaczam z tego silnię podwójną:
+$$ (2c-1)!! = \frac{(2c)!}{2^c c!} $$
+Po podstawieniu i wymnożeniu mianowników otrzymuję ostateczną postać:
+$$ \Gamma(c+0.5) = \frac{\frac{(2c)!}{2^c c!}}{2^c} \sqrt{\pi} = \frac{(2c)!}{4^c c!} \sqrt{\pi} $$
+
+\section*{Metoda Romberga}
+
+Do wyznaczenia wartości całki zastosowałem metodę Romberga, bazującą na ekstrapolacji Richardsona dla złożonego wzoru trapezów.
+
+Wartości początkowe w pierwszej kolumnie macierzy odpowiadają aproksymacji metodą trapezów z krokiem $h_i = \frac{x}{2^{i-1}}$ dla $i \ge 1$:
+$$ R(i,1) = \frac{h_i}{2} \left( f(0) + 2 \sum_{k=1}^{2^{i-1}-1} f(k \cdot h_i) + f(x) \right) $$
+
+Kolejne wyrazy macierzy Romberga wyznaczam ze wzoru rekurencyjnego:
+$$ R(i,j) = R(i,j-1) + \frac{R(i,j-1) - R(i-1,j-1)}{4^{j-1} - 1}, \quad j > 1 $$
+
+Obliczenia przerywam po spełnieniu warunku zbieżności na głównej przekątnej dla danego $\epsilon = 10^{-6}$:
+$$ |R(i,i) - R(i-1,i-1)| < \epsilon $$
+
+\end{document}

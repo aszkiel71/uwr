@@ -6,7 +6,6 @@
 *.csv
 *.gz
 *.pkl
-*.txt
 *.npy
 *.png
 
@@ -19,3 +18,9 @@
 .venv/
 *.json
 *.npz
+
+# Java / IntelliJ
+*.iml
+*.class
+*.bin
+out/

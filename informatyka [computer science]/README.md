@@ -2,6 +2,14 @@
 
 ## Computer Science
 
+#### 5 sem (2026/2027)
+
+###### Language Models
+###### Operating Systems
+###### Selected Aspects of Practical Software Development
+###### Concurrent programming
+###### Seminar: Organization of Computer Systems
+_________
 #### 4 sem (2026)
 ###### Algorithms and Data Structures
 ###### Computer Architecture

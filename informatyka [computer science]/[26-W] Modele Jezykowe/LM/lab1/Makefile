@@ -4,6 +4,7 @@ MODEL ?= papuga
 WORDS ?=
 N ?= 30
 GENN ?= 120
+SPEC ?=
 
 help:
 	@echo "Usage:"
@@ -14,6 +15,7 @@ help:
 	@echo "  make t1                 - uruchom chatbota (domyslny model: papuga)"
 	@echo "  make t1 MODEL=bigger    - uruchom na wiekszym modelu, do porownania/testow"
 	@echo "  make t1 MODEL=<hf/repo> - uruchom na dowolnym innym modelu z Hugging Face"
+	@echo "  make t1 SPEC=\"piłka nożna\" - eksperyment: Marek jako ekspert danej dziedziny"
 	@echo ""
 	@echo "Zadanie 2 (szeregowanie slow, lab1/word_order.py):"
 	@echo "  make t2                          - uruchom na przykladach z p1.pdf + kilku wlasnych"
@@ -39,7 +41,7 @@ sync:
 	uv sync
 
 t1:
-	LM_MODEL=$(MODEL) uv run --no-sync -q python run_task1.py
+	LM_MODEL=$(MODEL) BOT_SPECIALIZATION="$(SPEC)" uv run --no-sync -q python run_task1.py
 
 t2:
 	LM_MODEL=$(MODEL) uv run --no-sync -q python word_order.py $(WORDS)

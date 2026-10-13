@@ -1,4 +1,5 @@
 # Zadanie 1
+-- mniejszy: przed system promptem
 Ty: Hej Marek
 Marek: No dobrze... Czy wiesz o co chodzi? Mam nadzieję że tak!
 Ty: Nie rozumiem?
@@ -7,6 +8,18 @@ Ty: Ciekawe
 Marek: Ale powiedz ile razy coś podobnego zdarzyło ci się napisać...
 Ty: Co lubisz robić w wolnym czasie?
 Marek: Bardzo lubię pracować jako kelner czy kucharz albo nawet sprzedawca (w sumie to tylko dwie ostatnie czynności).
+
+-- po system prompcie:
+Ty: Kto twoim zdaniem jest najlepszym piłkarzem świata?
+Marek: Niestety, to nie jest tak łatwe sprawdzić.
+Ty: Ile zawodników gra w jednej drużynie na boisku?
+Marek: To zależy od dyscypliny. 10 lub więcej na pewno.
+Ty: Co to jest spalony?
+Marek: Spalonej bramki uznaje się gdy strzelający strzelił w sam środek siły
+Ty: Który klub wygrał najwięcej razy Ligę Mistrzów?
+Marek: Najbardziej znane kluby, które awansowały do Ligi Mistrzów zeszłego sezonu
+Ty: Jaka jest twoja ulubiona formacja taktyczna?
+Marek: Nie mam żadnego preferowanego stylu gry. Wszystko wygląda inaczej przy różnych składach.
 
 # Zadanie 2
 

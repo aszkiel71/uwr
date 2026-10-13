@@ -8,6 +8,7 @@ from sentence_probability import sentence_prob, tokenizer, model
 MAX_HISTORY = 3
 NUM_VARIANTS = 3
 MAX_NEW_TOKENS = 25
+SPECIALIZATION = os.environ.get("BOT_SPECIALIZATION", "")
 
 
 def _trim_to_sentence_end(text):
@@ -18,14 +19,23 @@ def _trim_to_sentence_end(text):
     return text
 
 class DialogBot:
-    def __init__(self):
+    def __init__(self, specialization=SPECIALIZATION):
         self.tokenizer = tokenizer
         self.model = model
         self.history = []
+        self.specialization = specialization
 
     def _build_prompt(self, current_user_input):
+        if self.specialization:
+            role = (
+                f"Jesteś Markiem, ekspertem od {self.specialization}. "
+                "Twoim zadaniem jest odpowiadać na pytania Tomasza, wykorzystując swoją wiedzę fachową w tej dziedzinie."
+            )
+        else:
+            role = "Jesteś Markiem. Twoim zadaniem jest odpowiadać na pytania Tomasza."
+
         prompt = (
-            "Instrukcja: Jesteś Markiem. Twoim zadaniem jest odpowiadać na pytania Tomasza.\n"
+            f"Instrukcja: {role}\n"
             "Wymagania: Twoje wypowiedzi muszą być bardzo krótkie, zwięzłe i sensowne. "
             "Nie dopisuj i nie powtarzaj wcześniejszych kwestii z historii rozmowy, ponieważ są one automatycznie dodawane przez system.\n"
             "Kontekst: Poniżej znajduje się zapis rozmowy dwóch znajomych, Tomasza i Marka, którzy spotkali się w kawiarni.\n\n"

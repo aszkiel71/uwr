@@ -3,7 +3,7 @@ import sys
 import itertools
 
 sys.path.append(os.path.join(os.path.dirname(__file__), 'P1'))
-from sentence_probability import sentence_prob
+from sentence_probability import sentence_prob, device
 
 TOP_K = 10
 BOTTOM_K = 3
@@ -62,6 +62,7 @@ EXAMPLE_SENTENCES = [
 
 
 if __name__ == '__main__':
+    print(f"(urządzenie: {device})\n")
     if len(sys.argv) > 1:
         sentences = [sys.argv[1:]]
     else:

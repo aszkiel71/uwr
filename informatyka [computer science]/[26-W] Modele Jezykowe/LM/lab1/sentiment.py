@@ -129,7 +129,7 @@ if __name__ == '__main__':
     n = int(sys.argv[1]) if len(sys.argv) > 1 else 30
     accuracy, confusion, mistakes, total = evaluate(n)
 
-    print(f"Model: {os.environ.get('LM_MODEL', 'papuga')}")
+    print(f"Model: {os.environ.get('LM_MODEL', 'papuga')} (urządzenie: {device})")
     print(f"Probka: {total} opinii ({n} GOOD + {n} BAD)")
     print(f"Accuracy: {accuracy:.1%} ({int(accuracy * total)}/{total})\n")
 

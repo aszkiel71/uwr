@@ -22,8 +22,12 @@ MODEL_ALIASES = {
 _requested_model = os.environ.get("LM_MODEL", "papuga")
 model_name = MODEL_ALIASES.get(_requested_model, _requested_model)
 
-device = 'cuda'
-device = 'cpu'
+if torch.cuda.is_available():
+    device = 'cuda'
+elif torch.backends.mps.is_available():  # Apple Silicon GPU
+    device = 'mps'
+else:
+    device = 'cpu'
 
 tokenizer = AutoTokenizer.from_pretrained(model_name)
 # torch_dtype=float32: some bigger models (e.g. the "bigger" alias) ship

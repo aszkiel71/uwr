@@ -143,3 +143,32 @@ technik mimo najwiekszego modelu - to oczekiwane, bo to najtrudniejsza
 kategoria (realna wiedza faktograficzna z surowego, nieinstrukcyjnego modelu
 1.1B, bez wyszukiwania).
 
+## Aktualizacja - pelny zbior (400/400)
+
+```
+make t3 N=200
+```
+
+**Accuracy: 83.2% (333/400)** - prawie identycznie jak szacunek z probki 80
+(81.2%), czyli ta probka byla dobrze reprezentatywna.
+
+|            | pred GOOD | pred BAD |
+|------------|-----------|----------|
+| gold GOOD  | 148       | 52       |
+| gold BAD   | 15        | 185      |
+
+Ten sam asymetryczny wzorzec bledow co w probce: GOOD->BAD 52/200 = 26% vs
+BAD->GOOD 15/200 = 7.5%.
+
+## Auto-detekcja urzadzenia (CUDA / MPS / CPU)
+
+`lab1/P1/sentence_probability.py` wykrywa teraz urzadzenie automatycznie,
+zero konfiguracji: `cuda` (jesli dostepne GPU NVIDIA) -> `mps` (Apple
+Silicon) -> `cpu` (fallback). Wszystkie pozostale pliki (`chatbot_engine.py`,
+`sentiment.py`, `qa.py`) nigdy nie mialy wlasnego hardcoded urzadzenia - albo
+importuja `device` z `sentence_probability.py`, albo licza z `model.device`,
+wiec zmiana w jednym miejscu objela cala baze kodu. Wykryte urzadzenie jest
+teraz tez drukowane na starcie kazdego z 4 skryptow (`run_task1.py`,
+`word_order.py`, `sentiment.py`, `qa.py`). Zweryfikowane empirycznie w tej
+maszynie (WSL2 + GPU passthrough): `cuda` wykrywane poprawnie.
+

@@ -156,7 +156,7 @@ if __name__ == '__main__':
     gen_n = int(sys.argv[1]) if len(sys.argv) > 1 else 120
     results, total_questions = evaluate(generate_sample_size=gen_n)
 
-    print(f"Model: {os.environ.get('LM_MODEL')}")
+    print(f"Model: {os.environ.get('LM_MODEL')} (urządzenie: {device})")
     print(f"Zbior: {total_questions} pytan\n")
 
     weighted = 0.0
